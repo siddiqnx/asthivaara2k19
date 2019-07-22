@@ -1,6 +1,4 @@
-const webpack = require("webpack");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const autoprefixer = require("autoprefixer");
 
 module.exports = {
   entry: "./src/index.js",
@@ -23,12 +21,6 @@ module.exports = {
           }
         ]
       },
-      {
-        test: /\.scss$/,
-        use: [
-          
-        ]
-      },
       //File Loader
       {
         test: /\.(png|svg|jpe?g|gif)$/,
@@ -37,11 +29,22 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: "[name].[ext]",
-              outputPath: 'images',
+              outputPath: 'images'
             }
           }
         ]
-      }
+      },
+      //Font Loader
+      {
+        test: /\.(ttf|eot|woff|woff2|otf)$/,
+        use: {
+          loader: "file-loader",
+          options: {
+            name: "[name].[ext]",
+            outputPath: 'fonts'
+          },
+        },
+      },
     ]
   },
 
@@ -50,7 +53,7 @@ module.exports = {
   ],
 
   devServer: {
-    port: 9000,
+    port: 9001,
     writeToDisk:true
   }
 }
