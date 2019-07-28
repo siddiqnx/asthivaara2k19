@@ -168,6 +168,12 @@
   }
 }
 
+@media only screen and (max-width: 480px) {
+  .multi-lang {
+    display: none;
+  }
+}
+
 @media only screen and (min-height: 935px) {
   .hero {
     grid-template-rows: 1fr 300px 130px 200px 1fr;
