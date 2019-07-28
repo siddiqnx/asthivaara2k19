@@ -92,6 +92,18 @@ main {
   
 }
 
+.events--technical .event-card {
+  border-bottom: 5px solid rgb(204, 110, 0);
+}
+
+.events--non-technical .event-card {
+  border-bottom: 5px solid rgb(48, 207, 208);
+}
+
+.events--online-technical .event-card {
+  border-bottom: 5px solid rgb(182, 244, 146);
+}
+
 .expanded {
   position: absolute;
   width: 100vw;

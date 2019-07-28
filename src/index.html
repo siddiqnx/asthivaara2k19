@@ -132,10 +132,66 @@
         </div>
       </section>
     </div>
+
     <section class="register">
       <h2 class="heading register__heading">Register</h2>
-      <iframe class="register__form" src="https://docs.google.com/forms/d/e/1FAIpQLScz2RtG5pvD9eBT4Qiwrj0Sl6yE65CIJ0mH3nN1dLT0lTN6_w/viewform?embedded=true" width="640" height="1226" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+      <div id="register_wrapper">
+        <form id="register_form">
+          <label type="text" for="name">
+            <select>
+              <option value="">Select one</option>
+              <option value="Symposium">Symposium</option>
+              <option value="Workshop">Workshop</option>
+              <option value="Asthivaara Junior">Asthivaara Junior</option>
+            </select>
+            <span class="label">Registration For</span>
+          </label>
+          <label type="text" for="name">
+            <input type="text" name="user_name" id="name" placeholder="Enter your name" required>
+            <span class="label">Name</span>
+          </label>
+          <label type="text" for="email">
+            <input type="text" name="user_email" id="email" placeholder="Enter your email ID" required>
+            <span class="label">Email ID</span>
+          </label>
+          <label type="text" for="phno">
+            <input type="text" name="user_phno" id="phno" placeholder="Enter your phone number" required>
+            <span class="label">Phone Number</span>
+          </label>
+          <label type="text" for="degree">
+            <input type="text" name="user_degree" id="degree" required>
+            <span class="label">Degree</span>
+          </label>
+          <label type="text" for="dept">
+            <input type="text" name="user_department" id="dept" required>
+            <span class="label">Department</span>
+          </label>
+          <label type="text" for="year">
+            <select name="user_year" id="year" placeholder="Select your year of study" required>
+              <option value=""></option>
+              <option value="1st Year">1st Year</option>
+              <option value="2nd Year">2nd Year</option>
+              <option value="3rd Year">3rd Year</option>
+              <option value="4th Year">4th Year</option>
+              <option value="5th Year">5th Year</option>
+              <option value="6th Year">Others</option>
+            </select>
+            <span class="label">Year</span>
+          </label>
+          <label  class=" " type="text" for="college">
+            <input type="text" name="user_college" id="college" placeholder="Enter your college" required>
+            <span class="label">College</span>
+          </label>
+          <button class="register__pay" type="button" value="Register" onclick="paymentGatewayHandler()">
+            Pay Registration Fee
+          </button>
+          <button class="register__submit" type="button" value="Register" disabled>
+            Register
+          </button>
+        </form>
+      </div>
     </section>
+
     <section class="sponsors"></section>
     <section class="gallery">
       <h2 class="heading gallery__heading">Gallery</h2>
@@ -191,6 +247,9 @@
     </div>
     <div class="footer__copyright-info">Copyright © | Easwari Engineering College</div>
   </footer>
-
+  <script>
+    
+  </script>
+  <script src="https://js.instamojo.com/v1/checkout.js"></script>
 </body>
 </html>
