@@ -1,0 +1,53 @@
+@media only screen and (max-width: 1200px) {
+  .header .nav {
+    display: none;
+  }
+
+  .header__menu-toggle{
+    display: block;
+  }
+
+  .hero__dept-info {
+    line-height: 1.2;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .about__section {
+    flex-direction: column;
+    position: relative;
+    padding: 68px 0;
+  }
+  .about__section:nth-child(1) .about__content {
+    text-align: left;
+  }
+
+  .about__image-container {
+    position: absolute;
+    z-index: -1;
+    opacity: 0.2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .about__image {
+    width: 100vw;
+    height: 100%;
+  }
+
+  .about__text {
+    padding-top: 50px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .about__text {
+    padding: 0 35px;
+  }
+
+  .about__content {
+    width: 100%;
+  }
+}

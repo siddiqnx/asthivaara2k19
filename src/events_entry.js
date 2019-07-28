@@ -4,3 +4,4 @@ import './fonts/IBMPlexSans-Light.ttf';
 import './js/app';
 import './js/event-handler';
 import './js/carousel';
+import './js/side-nav';

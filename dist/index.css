@@ -349,7 +349,8 @@ h1 {
 
 ul {
   margin: 0;
-  list-style: none; }
+  list-style: none;
+  padding: 0; }
 
 a {
   text-decoration: none;
@@ -412,7 +413,7 @@ section > .heading {
   .header .nav {
     display: inline-block;
     position: absolute;
-    min-width: 500px;
+    width: 587px;
     left: 50%;
     transform: translateX(-50%); }
     .header .nav__list {
@@ -510,19 +511,16 @@ section > .heading {
   .hero__social {
     font-family: "FiraCode-Retina";
     grid-column: -1;
-    grid-row: -1 / -4;
+    grid-row: -1 / -2;
     -webkit-writing-mode: vertical-rl;
         -ms-writing-mode: tb-rl;
             writing-mode: vertical-rl;
     margin-right: 10px;
     font-size: 1rem; }
-    .hero__social__list {
-      display: flex;
-      justify-content: space-evenly; }
-      .hero__social__list a {
-        color: #DA1B60;
-        text-transform: uppercase;
-        letter-spacing: 4px; }
+    .hero__social a {
+      color: #DA1B60;
+      text-transform: uppercase;
+      letter-spacing: 4px; }
 
 .multi-lang {
   position: relative;
@@ -582,7 +580,10 @@ section > .heading {
     width: 40vw;
     display: block;
     border-radius: 5px;
-    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5); }
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+    height: 500px;
+    -o-object-fit: cover;
+       object-fit: cover; }
   .about__section:nth-child(2) .about__text {
     order: 2; }
   .about__section:nth-child(1) .about__content {
@@ -855,4 +856,144 @@ body {
   border-right: 0.5px solid #2a2a33;
   padding-right: 50px;
   margin-top: 50px; }
+
+.js-side-nav {
+  z-index: 99999; }
+
+.header__menu-toggle {
+  display: none;
+  position: absolute;
+  right: 50px;
+  line-height: 50px;
+  background: none;
+  border: none;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  margin: 0;
+  margin-top: 10px;
+  color: #FFF; }
+
+.side-nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none; }
+
+.side-nav--visible {
+  pointer-events: auto; }
+
+.side-nav::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  will-change: opacity;
+  transition: opacity 0.3s cubic-bezier(0, 0, 0.3, 1); }
+
+.side-nav__container {
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  background: #DA1B60;
+  height: 100%;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.4);
+  transform: translateX(-102%);
+  display: flex;
+  flex-direction: column;
+  will-change: transform; }
+
+.side-nav--animatable .side-nav__container {
+  transition: transform 0.13s cubic-bezier(0, 0, 0.3, 1); }
+
+.side-nav--visible.side-nav--animatable .side-nav__container {
+  transition: transform 0.33s cubic-bezier(0, 0, 0.3, 1); }
+
+.side-nav--visible::before {
+  opacity: 1; }
+
+.side-nav--visible .side-nav__container {
+  transform: none; }
+
+.side-nav__hide {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  background: none;
+  border: none;
+  color: #FFF;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  margin: 0; }
+
+.side-nav__header {
+  height: 200px;
+  background: #DA1B60;
+  color: #FFF;
+  display: flex;
+  padding: 16px;
+  align-items: flex-end;
+  font-size: 24px; }
+
+.side-nav__content {
+  padding-top: 32px;
+  flex: 1;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; }
+
+.side-nav__content li {
+  height: 48px;
+  line-height: 48px;
+  padding: 0 16px; }
+
+.side-nav__content li:hover {
+  background: #ad154c; }
+
+@media only screen and (max-width: 1200px) {
+  .header .nav {
+    display: none; }
+  .header__menu-toggle {
+    display: block; }
+  .hero__dept-info {
+    line-height: 1.2; } }
+
+@media only screen and (max-width: 900px) {
+  .about__section {
+    flex-direction: column;
+    position: relative;
+    padding: 68px 0; }
+  .about__section:nth-child(1) .about__content {
+    text-align: left; }
+  .about__image-container {
+    position: absolute;
+    z-index: -1;
+    opacity: 0.2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; }
+  .about__image {
+    width: 100vw;
+    height: 100%; }
+  .about__text {
+    padding-top: 50px; } }
+
+@media only screen and (max-width: 600px) {
+  .about__text {
+    padding: 0 35px; }
+  .about__content {
+    width: 100%; } }
 

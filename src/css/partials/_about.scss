@@ -30,6 +30,8 @@
     display: block;
     border-radius: 5px;
     box-shadow: 0 20px 30px rgba(0,0,0,0.5);
+    height: 500px;
+    object-fit: cover;
   }
 
   &__section:nth-child(2) &__text {

@@ -109,18 +109,14 @@
   &__social {
     font-family: $ff-m;
     grid-column: -1;
-    grid-row: -1 / -4;
+    grid-row: -1 / -2;
     writing-mode: vertical-rl;
     margin-right: 10px;
     font-size: $fs-n;
-    &__list {
-      display: flex;
-      justify-content: space-evenly;
-      a {
-        color: $c-primary;
-        text-transform: uppercase;
-        letter-spacing: 4px;
-      }
+    a {
+      color: $c-primary;
+      text-transform: uppercase;
+      letter-spacing: 4px;
     }
   }
 }
