@@ -1,3 +1,9 @@
+@media only screen and (max-width: 1032px) {
+  .events-grid {
+    grid-template-columns: repeat(2, minmax(300px, 300px));
+  }
+}
+
 @media only screen and (max-width: 1200px) {
   .header .nav {
     display: none;
@@ -9,6 +15,9 @@
 
   .hero__dept-info {
     line-height: 1.2;
+  }
+  .gallery__item {
+    width: 400px;
   }
 }
 
@@ -40,6 +49,77 @@
   .about__text {
     padding-top: 50px;
   }
+  
+}
+
+@media only screen and (max-width: 835px) {
+
+  .hero {
+    grid-template-columns: 100px 1fr 210px .5fr 210px 1fr 100px;
+  }
+
+  .hero__logo__title {
+    font-size: 2.3rem;
+  }
+
+  .hero__logo__img {
+    width: 190px;
+  }
+
+  .hero__countdown {
+    padding: 0;
+  }
+
+  .hero__dept-info {
+    font-size: 1rem;
+  }
+
+  .hero__buttons {
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+  }
+
+  .hero__button {
+    width: 150px;
+    font-size: 1rem;
+  }
+
+  .gallery__item {
+    width: 300px;
+  }
+}
+
+
+
+@media only screen and (max-width: 700px) {
+  .multi-lang__list {
+    font-size: $fs-s;
+  }
+  .events-grid {
+    grid-template-columns: repeat(1, minmax(300px, 300px));
+  }
+  .event-card {
+    height: 100px;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  .hero {
+    grid-template-columns: 100px 1fr 160px .5fr 160px 1fr 100px;
+  }
+  .hero__logo__title {
+    font-size: 1.6rem;
+  }
+  .hero__logo__img {
+    width: 140px;
+  }
+  .hero__countdown {
+    font-size: 2.4rem;
+  }
+  .countdown_unit {
+    font-size: 1rem;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -49,5 +129,56 @@
 
   .about__content {
     width: 100%;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .hero {
+    grid-template-columns: 1fr 1fr 160px .5fr 160px 1fr 1fr;
+  }
+  .hero__dept-info {
+    display: none;
+  }
+  .hero__social {
+    display: none;
+  }
+  .footer__container {
+    flex-direction: column;
+  }
+  .nav--footer {
+    padding: 0;
+    margin: 20px auto;
+  }
+  .nav__list {
+    margin: 0 50px;
+  }
+  .nav__list-item {
+    display: inline-block;
+    padding: 10px 15px;
+    background: lighten($c-dark, 10%);
+    border-radius: 15px;
+    font-size: $fs-s;
+    margin: 5px 0;
+  }
+  .footer__contact {
+    padding-left: 0px;
+  }
+  .events .heading {
+    font-size: 1.7rem;
+  }
+}
+
+@media only screen and (min-height: 935px) {
+  .hero {
+    grid-template-rows: 1fr 300px 130px 200px 1fr;
+  }
+}
+
+@media only screen and (max-height: 812px) {
+  .hero {
+    grid-template-rows: 60px 248px 130px 200px 1fr;
+  }
+  .hero__logo__img {
+    width: 160px;
   }
 }

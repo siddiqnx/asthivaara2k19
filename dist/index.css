@@ -432,7 +432,7 @@ section > .heading {
   background-color: #131317;
   color: #F4F4F4;
   grid-template-columns: 100px 1fr 300px .5fr 300px 1fr 100px;
-  grid-template-rows: .25fr 300px 130px 200px 1fr;
+  grid-template-rows: 60px 300px 130px 200px 1fr;
   background-repeat: no-repeat;
   background-position: center bottom -600px; }
   .hero__logo {
@@ -487,7 +487,8 @@ section > .heading {
     text-transform: uppercase;
     font-size: 1.5rem;
     letter-spacing: 5px;
-    border-radius: 5px; }
+    border-radius: 5px;
+    text-align: center; }
     .hero__button--register {
       background: #DA1B60; }
     .hero__button--events {
@@ -510,13 +511,15 @@ section > .heading {
       color: #DA1B60; }
   .hero__social {
     font-family: "FiraCode-Retina";
-    grid-column: -1;
-    grid-row: -1 / -2;
+    grid-column: -2;
+    grid-row: -1 / -3;
     -webkit-writing-mode: vertical-rl;
         -ms-writing-mode: tb-rl;
             writing-mode: vertical-rl;
     margin-right: 10px;
-    font-size: 1rem; }
+    font-size: 1rem;
+    text-align: right;
+    margin-bottom: 20px; }
     .hero__social a {
       color: #DA1B60;
       text-transform: uppercase;
@@ -692,7 +695,7 @@ main {
 .expanded {
   position: absolute;
   width: 100vw;
-  height: calc(100vh);
+  height: 100vh !important;
   cursor: auto;
   left: 0;
   top: 0;
@@ -902,7 +905,7 @@ body {
 .side-nav__container {
   position: relative;
   width: 90%;
-  max-width: 400px;
+  max-width: 20rem;
   background: #DA1B60;
   height: 100%;
   box-shadow: 2px 0 12px rgba(0, 0, 0, 0.4);
@@ -962,13 +965,19 @@ body {
 .side-nav__content li:hover {
   background: #ad154c; }
 
+@media only screen and (max-width: 1032px) {
+  .events-grid {
+    grid-template-columns: repeat(2, minmax(300px, 300px)); } }
+
 @media only screen and (max-width: 1200px) {
   .header .nav {
     display: none; }
   .header__menu-toggle {
     display: block; }
   .hero__dept-info {
-    line-height: 1.2; } }
+    line-height: 1.2; }
+  .gallery__item {
+    width: 400px; } }
 
 @media only screen and (max-width: 900px) {
   .about__section {
@@ -991,9 +1000,86 @@ body {
   .about__text {
     padding-top: 50px; } }
 
+@media only screen and (max-width: 835px) {
+  .hero {
+    grid-template-columns: 100px 1fr 210px .5fr 210px 1fr 100px; }
+  .hero__logo__title {
+    font-size: 2.3rem; }
+  .hero__logo__img {
+    width: 190px; }
+  .hero__countdown {
+    padding: 0; }
+  .hero__dept-info {
+    font-size: 1rem; }
+  .hero__buttons {
+    flex-direction: column;
+    align-items: center;
+    height: 100%; }
+  .hero__button {
+    width: 150px;
+    font-size: 1rem; }
+  .gallery__item {
+    width: 300px; } }
+
+@media only screen and (max-width: 700px) {
+  .multi-lang__list {
+    font-size: 0.8rem; }
+  .events-grid {
+    grid-template-columns: repeat(1, minmax(300px, 300px)); }
+  .event-card {
+    height: 100px; } }
+
+@media only screen and (max-width: 620px) {
+  .hero {
+    grid-template-columns: 100px 1fr 160px .5fr 160px 1fr 100px; }
+  .hero__logo__title {
+    font-size: 1.6rem; }
+  .hero__logo__img {
+    width: 140px; }
+  .hero__countdown {
+    font-size: 2.4rem; }
+  .countdown_unit {
+    font-size: 1rem; } }
+
 @media only screen and (max-width: 600px) {
   .about__text {
     padding: 0 35px; }
   .about__content {
     width: 100%; } }
+
+@media only screen and (max-width: 520px) {
+  .hero {
+    grid-template-columns: 1fr 1fr 160px .5fr 160px 1fr 1fr; }
+  .hero__dept-info {
+    display: none; }
+  .hero__social {
+    display: none; }
+  .footer__container {
+    flex-direction: column; }
+  .nav--footer {
+    padding: 0;
+    margin: 20px auto; }
+  .nav__list {
+    margin: 0 50px; }
+  .nav__list-item {
+    display: inline-block;
+    padding: 10px 15px;
+    background: #2a2a33;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    margin: 5px 0; }
+  .footer__contact {
+    padding-left: 0px; }
+  .events .heading {
+    font-size: 1.7rem; } }
+
+@media only screen and (min-height: 935px) {
+  .hero {
+    grid-template-rows: 1fr 300px 130px 200px 1fr; } }
+
+@media only screen and (max-height: 812px) {
+  .hero {
+    grid-template-rows: 60px 248px 130px 200px 1fr; }
+  .hero__logo__img {
+    width: 160px; } }
 

@@ -95,7 +95,7 @@ main {
 .expanded {
   position: absolute;
   width: 100vw;
-  height: calc(100vh);
+  height: 100vh !important;
   cursor: auto;
   left: 0;
   top: 0;
