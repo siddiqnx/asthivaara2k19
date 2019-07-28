@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
   <meta http-equifv="X-UA-Compatible" content="ie=edge">
   
   <title>Asthivaara 2k19</title>
@@ -12,18 +12,19 @@
 </head>
 <body>
 
-  <header lass="header">
-    <a href="/" class="header__logo">
+  <header class="header">
+    <a href="/" class="header__logo hide home">
       <img class="header__logo__img " src="./images/logo.png" alt="Asthivaara 2K19 Logo">
+      <span class="header__logo__title">Asthivaara 2K19</span>
     </a>
     <nav class="nav">
       <ul class="nav__list">
-        <li class="nav__list-item">About Us</li>
-        <li class="nav__list-item">Gallery</li>
-        <li class="nav__list-item">Sponsors</li>
-        <li class="nav__list-item">Gallery</li>
-        <li class="nav__list-item">Events</li>
-        <li class="nav__list-item">Map</li>
+          <li class="nav__list-item"><a href="#">About Us</a></li>
+          <li class="nav__list-item"><a href="#">Gallery</a></li>
+          <li class="nav__list-item"><a href="#">Sponsors</a></li>
+          <li class="nav__list-item"><a href="#">Gallery</a></li>
+          <li class="nav__list-item"><a href="/events.html">Events</a></li>
+          <li class="nav__list-item"><a href="#">Map</a></li>
       </ul>
     </nav>
   </header>
@@ -35,12 +36,30 @@
     </div>
 
     <div class="hero__countdown">
-
-    </div> 
+      <span class="countdown_item">
+        <span class="countdown_num">00</span>
+        <span class="countdown_unit"> Days </span>
+      </span>
+      <span class="countdown_item">
+        <span class="countdown_num">00</span>
+        <span class="countdown_unit"> Hours </span>
+      </span>
+      <span class="countdown_item">
+        <span class="countdown_num">00</span>
+        <span class="countdown_unit"> Minutes </span>
+      </span>
+      <span class="countdown_item">
+        <span class="countdown_num">00</span>
+        <span class="countdown_unit"> Seconds </span>
+      </span>
+    </div>  
     
-    <a href="#register" class ="hero__button--register"></a>
-    <a href="./events.html" class="hero__button--events"></a>
-    <div class="hero__dept-info"><span>Symposium By</span>Department of Civil Engineering <br> Easwari Engineering College</div>
+    <div class="hero__buttons">
+      <a href="#register" class ="hero__button hero__button--register">Register</a>
+      <a href="/events.html" class="hero__button hero__button--events">Events</a>
+    </div>
+
+    <div class="hero__dept-info"><span>Symposium By</span><br>Department of Civil Engineering <br> Easwari Engineering College</div>
     <div class="hero__social">
       <ul class="hero__social__list">
         <li class="social__item"><a href="https://facebook.com">Facebook</a></li>
@@ -51,7 +70,7 @@
   </div>
 
   <div class="multi-lang">
-    <ul>
+    <ul class="multi-lang__list">
       <li class="multi-lang__list__item">அஸ்திவாரா ௨௦௧௯ </li>
       <li class="multi-lang__list__item">استیوارا ٢٠١٩</li>
       <li class="multi-lang__list__item">ఆస్తివారా 2019</li>
@@ -66,40 +85,56 @@
   <main>
     <div class="about" aria-label="About Us">
       <section class="about__section">
-        <h2 class="heading about__heading">About Our College</h2>
-        <img class="about__image" src="./images/about_college.png" alt="A picture of Easwari Engineering College">
-        <p class="about__content">
+        <div class="about__text">
+          <h2 class="heading about__heading">About Our College</h2>
+          <p class="about__content">
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-        </p>
+          </p>
+        </div>
+        <div class="about__image-container">
+          <img class="about__image" src="./images/about_college.png" alt="A picture of Easwari Engineering College">
+        </div>
       </section>
       <section class="about__section">
-      <h2 class="heading about__heading">About Our Department</h2>
-      <img class="about__image" src="./images/about_department.png" alt="A picture of the Civil Engineering Department">
-      <p class="about__content">
+        <div class="about__text">
+          <h2 class="heading about__heading">About Our Department</h2>
+          <p class="about__content">
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-        </p>
+          </p>
+        </div>
+        <div class="about__image-container">
+          <img class="about__image" src="./images/about_department.png" alt="A picture of the Civil Engineering Department">
+        </div>
       </section>
     </div>
     <section class="register">
       <h2 class="heading register__heading">Register</h2>
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScz2RtG5pvD9eBT4Qiwrj0Sl6yE65CIJ0mH3nN1dLT0lTN6_w/viewform?embedded=true" width="640" height="1226" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+      <iframe class="register__form" src="https://docs.google.com/forms/d/e/1FAIpQLScz2RtG5pvD9eBT4Qiwrj0Sl6yE65CIJ0mH3nN1dLT0lTN6_w/viewform?embedded=true" width="640" height="1226" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
     </section>
     <section class="sponsors"></section>
     <section class="gallery">
       <h2 class="heading gallery__heading">Gallery</h2>
-      <img src="./images/about_college.png" alt="" class="gallery__item">
-      <img src="./images/about_college.png" alt="" class="gallery__item">
-      <img src="./images/about_college.png" alt="" class="gallery__item">
-      <img src="./images/about_college.png" alt="" class="gallery__item">
-      <img src="./images/about_college.png" alt="" class="gallery__item">
+      <div class="gallery__container">
+        <img src="./images/about_college.png" alt="" class="gallery__item">
+        <img src="./images/about_college.png" alt="" class="gallery__item">
+        <img src="./images/about_college.png" alt="" class="gallery__item">
+        <img src="./images/about_college.png" alt="" class="gallery__item">
+        <img src="./images/about_college.png" alt="" class="gallery__item">
+      </div>
+      <img class="gallery__illustration" src="./images/building-illustration.svg" alt="A building illustration">
     </section>
+    
     <section class="map">
       <h2 class="heading map__heading" hidden>Map</h2>
       <iframe width="100%" height="360" id="gmap_canvas" src="https://maps.google.com/maps?q=easwari%20engineering%20college%2C%20ramapuram&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
     </section>
   </main>
-
+  
   <footer>
+    <div class="footer__social">
+
+    </div>
+    <div class="footer__container">
       <nav class="nav nav--footer">
         <ul class="nav__list">
           <li class="nav__list-item">About Us</li>
@@ -110,21 +145,25 @@
           <li class="nav__list-item">Map</li>
         </ul>
       </nav>
-      <section class="contact footer__contact">
-        <h2 class="contact__heading">Get in Touch</h2>
+      <section class="footer__contact">
+        <h2 class="heading contact__heading">Get in Touch</h2>
         <dl class="contact__list">
-
-          <dt class="contact__position">President</dt>
-          <dd class="contact__info">Xyzxyzxyz Xyzxyz <span class="contact__info__tel"><a href="tel:+987654321">+91 987 654 321</a></span></dd>
+  
+          <dt class="contact__position">Student Coordinators</dt>
+          <dd class="contact__info">Surendran P.N <span class="contact__info__tel"><a href="tel:+91 9790 574 097">+91 9790 574 097</a></span></dd>
+          <dd class="contact__info">Nirmal Kanan A <span class="contact__info__tel"><a href="tel:+91 7358 721 440">+91 7358 721 440</a></span></dd>
           
-          <dt class="contact__position">Treasurer</dt>
-          <dd class="contact__info">Xyzxyzxyz Xyzxyz <span class="contact__info__tel"><a href="tel:+987654321">+91 987 654 321</a></span></dd>
+          <dt class="contact__position">Treasurers</dt>
+          <dd class="contact__info">Venkatesh V<span class="contact__info__tel"><a href="tel:+91 7010 808 144">+91 7010 808 144</a></span></dd>
+          <dd class="contact__info">Dhamodharen<span class="contact__info__tel"><a href="tel:+91 8667 622 389">+91 8667 622 389</a></span></dd>
           
           <dt class="contact__position">Email</dt>
-          <dd class="contact__info">Xyzxyzxyz Xyzxyz <span class="contact__info__tel"><a href="tel:+987654321">+91 987 654 321</a></span></dd>
-
+          <span class="contact__info__tel"><a href="mailto: asthivaara2019@gmail.com">asthivaara2019@gmail.com</a></span></dd>
+  
         </dl>
       </section>
+    </div>
+    <div class="footer__copyright-info">Copyright © | Easwari Engineering College</div>
   </footer>
 
 </body>

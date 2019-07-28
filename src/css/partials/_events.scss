@@ -1,0 +1,107 @@
+main {
+  margin-top: 200px;
+}
+
+.events {
+  &:nth-child(1) {}
+    margin-top: 0;
+    &__heading {
+      margin-top: 0;
+  }
+  &:not(:nth-child(1)) {
+    margin-top: 150px;
+  }
+
+  &--technical .event-card__title {
+    background-image: $cg-g1;
+    background-clip: text;
+    color: transparent;
+  }
+  &--non-technical .event-card__title {
+    background-image: $cg-g2;
+    background-clip: text;
+    color: transparent;
+  }
+  &--online .event-card__title {
+    background-image: $cg-g3;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+.events-grid {
+  display: grid;
+  position: relative;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: repeat(3, minmax(300px, 300px));
+  grid-column-gap: 50px;
+  grid-row-gap: 50px;
+  //margin: 0px auto;
+  align-items: center;
+}
+
+.event-card {
+  position: relative;
+  height: 200px;
+  width: 300px;
+  text-align: center;
+  display: flex;
+  border-radius: 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+  background-color: $c-dark;
+  box-shadow: rgb(0, 0, 0) 0px 0px 5rem;
+  will-change: left;
+  // &:before {
+  //   position: absolute;
+  //   content: "";
+  //   z-index: -1;
+  //   bottom: 12px;
+  //   left: 30px;
+  //   right: 30px;
+  //   top: 14px;
+  //   background: #FFF;
+  //   box-shadow: 0 0 30px 17px #486685;
+  //   border-radius: 100px/10px; 
+  // }
+
+  &__title {
+    margin: 0 auto;
+    align-self: center;
+    justify-self: center;
+  }
+}
+
+.events--all {
+  .event-card {
+    .event-card__title {
+      background-clip: text;
+      color: transparent;
+    }
+    &:nth-child(1) .event-card__title {
+      background-image: $cg-g1;
+    }
+    &:nth-child(2) .event-card__title {
+      background-image: $cg-g2;
+    }
+    &:nth-child(3) .event-card__title {
+      background-image: $cg-g3;
+    }
+  }
+  
+}
+
+.expanded {
+  position: absolute;
+  width: 100vw;
+  height: calc(100vh);
+  cursor: auto;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin:0;
+  z-index:999;
+  transition: width 1s, height 1s, left 1s, top 1s;
+}

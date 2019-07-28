@@ -1,7 +1,10 @@
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: {
+    index: "./src/index.js",
+    events: "./src/events_entry.js"
+  },
   module: {
     rules: [
       //Babel
@@ -50,10 +53,5 @@ module.exports = {
 
   plugins: [
     new CleanWebpackPlugin(),
-  ],
-
-  devServer: {
-    port: 9001,
-    writeToDisk:true
-  }
+  ]
 }

@@ -1,0 +1,42 @@
+.about {
+  margin: 100px 0;
+  &__section {
+    display: flex;
+  }
+
+  &__section + &__section {
+    margin-top: 100px;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__heading {
+    text-align: center;
+    font-size: $fs-xl;
+    margin-top: 0;
+  }
+
+  &__content {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  &__image {
+    width: 40vw;
+    display: block;
+    border-radius: 5px;
+    box-shadow: 0 20px 30px rgba(0,0,0,0.5);
+  }
+
+  &__section:nth-child(2) &__text {
+    order: 2;
+  }
+  
+  &__section:nth-child(1) &__content{
+    text-align: right;
+  }
+}

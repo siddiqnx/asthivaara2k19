@@ -7,8 +7,9 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = merge(common, {
   mode: "development",
   output: {
-    filename: "main.js",
-    path: path.resolve(__dirname, "dist")
+    filename: "[name].js",
+    path: path.resolve(__dirname, "dist"),
+    chunkFilename: '[id].bundle.js',
   },
   module: {
     rules: [
@@ -24,7 +25,14 @@ module.exports = merge(common, {
             loader: "postcss-loader",
           },
           {
+            loader: 'resolve-url-loader',
+          },
+          {
             loader: "sass-loader",
+            options: {
+              sourceMap: true,
+              sourceMapContents: false
+            }
           }
         ]
       }
@@ -33,10 +41,20 @@ module.exports = merge(common, {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/index.html",
-      filename: "./index.html"
+      filename: "./index.html",
+      chunks: ["index"]
+    }),new HtmlWebpackPlugin({
+      template: "./src/events.html",
+      filename: "./events.html",
+      chunks: ["events"]
     }),
     new MiniCssExtractPlugin({
       filename: "[name].css"
     })
-  ]
+  ],
+  devServer: {
+    host: '192.168.1.4',
+    port: 9000,
+    writeToDisk:true
+  }
 });

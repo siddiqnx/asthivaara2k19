@@ -1,16 +1,86 @@
+* {
+  scrollbar-color: #2a2c2e #1c1e1f;
+}
+
+*::-webkit-scrollbar {
+  background: $c-dark;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: lighten($c-dark, 10%);
+}
+
 body {
   font-family: $ff-ss;
-  font-weight: $fw-n;
-  color: $c-dark;
+  font-size: 18px;
+  color: $c-light;
+  background-color: $c-dark;
 }
 
 h1 {
-  font-family: $ff-ss;
-  font-weight: $fw-b;
+  font-family: $ff-s;
+  font-weight: $fw-n;
+  text-transform: uppercase;
 }
 
-h2 {
-  font-family: $ff-ss;
-  font-weight: $fw-b;
+ul {
+  margin: 0;
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color: $c-secondary;
+}
+
+.heading {
+  font-family: $ff-s;
+  font-size: $fs-l;
+  font-weight: $fw-n;
   color: $c-primary;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+main > section {
+  margin-top: 200px;
+}
+
+section > .heading {
+  margin-bottom: 100px;
+  text-align: center;
+  font-size: $fs-xl;
+}
+
+[data-hidden] {
+  opacity: 0;
+}
+
+.hide {
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+}
+
+.show {
+  opacity: 1;
+  transition: opacity .3s ease-in-out;
+}
+
+.clear {
+  opacity: 0;
+  //transition: opacity .1s ease-in-out;
+}
+
+.wrapper {
+  margin: 0;
+  overflow: auto;
+}
+
+.appear {
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+.vanish {
+  opacity: 0;
 }

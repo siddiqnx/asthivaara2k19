@@ -1,0 +1,29 @@
+.gallery {
+  &__container {
+    display: flex;
+    background: lighten($c-dark, 5%);
+    padding: 50px 0;
+    flex-wrap: nowrap;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    scrollbar-width: thin;
+    scrollbar-color: white;
+    box-shadow: 0 0 30px rgba(0,0,0,0.15) inset;
+  }
+  &__item {
+    display: block;
+    width: 500px;
+    flex: 0 0 auto;
+    margin: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.15);
+  }
+
+  &__illustration {
+    display: block;
+    width: 50vw;
+    margin: 100px auto 0;
+    filter: drop-shadow(0 10px 30px rgba(0,0,0,0.15));
+  }
+}

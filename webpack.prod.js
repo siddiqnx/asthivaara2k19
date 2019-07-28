@@ -32,7 +32,14 @@ module.exports = merge(common, {
             loader: "postcss-loader",
           },
           {
+            loader: 'resolve-url-loader',
+          },
+          {
             loader: "sass-loader",
+            options: {
+              sourceMap: true,
+              sourceMapContents: false
+            }
           }
         ]
       }
@@ -49,7 +56,18 @@ module.exports = merge(common, {
         removeAttributeQuotes: true,
         collapseWhitespace: true,
         removeComments: true
-      }
+      },
+      chunks: ["index"]
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/events.html",
+      filename: "./events.html",
+      minify: {
+        removeAttributeQuotes: true,
+        collapseWhitespace: true,
+        removeComments: true
+      },
+      chunks: ["events"]
     }),
   ]
 });
