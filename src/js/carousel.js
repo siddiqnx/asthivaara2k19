@@ -18,11 +18,16 @@ function setInitialClasses() {
 // Set click events to navigation buttons
 
 function setEventListeners() {
-  var next = document.getElementsByClassName('carousel__button--next')[0],
-      prev = document.getElementsByClassName('carousel__button--prev')[0];
-
-  next.addEventListener('click', moveNext);
-  prev.addEventListener('click', movePrev);
+  var next = document.querySelectorAll('carousel__button--next'),
+      prev = document.querySelectorAll('carousel__button--prev');
+  next.forEach((next) => {
+    next.addEventListener('click', moveNext);
+  });
+  
+  prev.forEach((prev) => {
+    prev.addEventListener('click', movePrev);
+  })
+  console.log('event listeners set');
 }
 
 // Disable interaction by setting 'moving' to true for the same duration as our transition (0.5s = 500ms)
@@ -35,13 +40,13 @@ function disableInteraction() {
 }
 
 function moveCarouselTo(slide) {
-
+  console.log('move carousel to hit');
   // Check if carousel is moving, if not, allow interaction
   if(!moving) {
 
     // temporarily disable interactivity
     disableInteraction();
-
+    console.log('interactions disabled');
     // Preemptively set variables for the current next and previous slide, as well as the potential next or previous slide.
     var newPrevious = slide - 1,
         newNext = slide + 1,
@@ -84,8 +89,9 @@ function moveCarouselTo(slide) {
 }
 
 // Next navigation handler
-function moveNext() {
-
+function moveNext(e) {
+  e.stopPropagation();
+  console.log('move next hit');
   // Check if moving
   if (!moving) {
 
@@ -102,8 +108,8 @@ function moveNext() {
 }
 
 // Previous navigation handler
-function movePrev() {
-
+function movePrev(e) {
+  e.stopPropagation();
   // Check if moving
   if (!moving) {
 

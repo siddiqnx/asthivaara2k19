@@ -1,5 +1,6 @@
-const header = document.querySelector(".header");
-const headerLogo = document.querySelector(".header__logo");
+const header = document.querySelector('.header');
+const headerLogo = document.querySelector('.header__logo');
+const internalLinks = document.querySelectorAll('a[href^="#"]');
 let isAtTheTop = true;
 document.onload = function() {
   if(headerLogo.classList.contains('home')) {
@@ -23,3 +24,12 @@ if(headerLogo.classList.contains('home')) {
     }
   });
 }
+
+internalLinks.forEach((link) => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});

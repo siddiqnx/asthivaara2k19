@@ -49,6 +49,7 @@ class SideNav {
     this.hideButtonEl = document.querySelector('.js-menu-hide');
     this.sideNavEl = document.querySelector('.js-side-nav');
     this.sideNavContainerEl = document.querySelector('.js-side-nav-container');
+    this.sideNavItem = document.querySelectorAll('.side-nav__content a');
     // Control whether the container's children can be focused
     // Set initial state to inert since the drawer is offscreen
     this.detabinator = new Detabinator(this.sideNavContainerEl);
@@ -95,7 +96,9 @@ class SideNav {
     this.hideButtonEl.addEventListener('click', this.hideSideNav);
     this.sideNavEl.addEventListener('click', this.hideSideNav);
     this.sideNavContainerEl.addEventListener('click', this.blockClicks);
-
+    this.sideNavItem.forEach((item) => {
+      item.addEventListener('click', this.hideSideNav);
+    })
     this.sideNavEl.addEventListener('touchstart', this.onTouchStart, this.applyPassive());
     this.sideNavEl.addEventListener('touchmove', this.onTouchMove, this.applyPassive());
     this.sideNavEl.addEventListener('touchend', this.onTouchEnd);

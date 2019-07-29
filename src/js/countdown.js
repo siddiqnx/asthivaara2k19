@@ -1,7 +1,7 @@
 function prezero(n){
   return n > 9 ? "" + n: "0" + n;
 }
-var deadline = new Date("Aug 20, 2019 15:37:25").getTime(); 
+var deadline = new Date("Aug 14, 2019 08:00:00").getTime(); 
 setInterval(function() { 
   var now = new Date().getTime(); 
   var t = deadline - now; 

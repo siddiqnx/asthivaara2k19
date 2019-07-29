@@ -78,18 +78,37 @@ main {
     .event-card__title {
       background-clip: text;
       color: transparent;
+      line-height: 200px;
     }
-    &:nth-child(1) .event-card__title {
-      background-image: $cg-g1;
+    &:nth-child(1) {
+      border-bottom: 5px solid rgb(204, 110, 0);
+      .event-card__title {
+        background-image: $cg-g1;
+      }
     }
-    &:nth-child(2) .event-card__title {
-      background-image: $cg-g2;
+    &:nth-child(2) {
+      border-bottom: 5px solid rgb(48, 207, 208);
+      .event-card__title {
+        background-image: $cg-g2;
+      }
     }
-    &:nth-child(3) .event-card__title {
-      background-image: $cg-g3;
+    &:nth-child(3) {
+      border-bottom: 5px solid rgb(182, 244, 146);
+      .event-card__title {
+        background-image: $cg-g3;
+      }
     }
   }
-  
+}
+
+.events-all {
+  &__link {
+    width: 100%;
+  }
+}
+
+.events--online {
+  margin-bottom: 200px;
 }
 
 .events--technical .event-card {
@@ -100,7 +119,7 @@ main {
   border-bottom: 5px solid rgb(48, 207, 208);
 }
 
-.events--online-technical .event-card {
+.events--online .event-card {
   border-bottom: 5px solid rgb(182, 244, 146);
 }
 

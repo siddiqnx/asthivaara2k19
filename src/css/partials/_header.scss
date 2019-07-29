@@ -18,21 +18,29 @@
   .nav {
     display: inline-block;
     position: absolute;
-    width: 587px;
+    width: 500px;
     left: 50%;
     transform: translateX(-50%);
     
     &__list {
       display: inline-block;
       text-align: center;
+      
       &-item {
         display: inline-block;
+        transition: border-width .3s cubic-bezier(.65,.05,.36,1);
+        &:hover {
+          border-bottom: 1px solid $c-secondary;
+        }
         a {
           line-height: 60px;
           padding: 1em;
         }
       }
     }
+  }
+  .nav.nav--events {
+    width: 601px;
   }
 }
 

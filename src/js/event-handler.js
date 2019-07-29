@@ -25,7 +25,9 @@ const eventSectionHeadings = document.querySelectorAll('.heading');
 // else expand
 
 window.onload = function() {
-  
+  document.querySelector('.loader-wrapper').style.display = 'none';
+  document.documentElement.style.overflow = 'auto';
+  document.body.style.overflow = 'auto';
   eventCards.forEach((eventCard, i) => {
     eventCard.dataset.id = i;
     cardWidth = cardWidth == 0 ? window.getComputedStyle(eventCard).getPropertyValue('width') : cardWidth;
@@ -47,13 +49,10 @@ window.onload = function() {
   closeButton.classList.add('vanish');
 };
 
-eventCards.forEach((eventCard) => {
+eventCards.forEach((eventCard, i) => {
 
   eventCard.addEventListener('click', (e) => {
-    e.stopPropagation();
-    const eventCard = e.target.nodeName === 'DIV' ? e.target : e.target.parentNode;
-    const target = e.target;
-    console.log(target);
+    const eventCard = e.target.closest('.event-card');
     const eventGrid = eventCard.parentNode;
     const eventSection = eventGrid.parentNode;
     const eventCardId = eventCard.dataset.id;
@@ -103,19 +102,20 @@ eventCards.forEach((eventCard) => {
     eventCardCarousel.classList.remove('vanish');
     eventCardCarousel.classList.add('appear');
     eventCardCarousel.removeAttribute('data-hidden');
-    setTimeout(() => {
+    eventCardCarousel.style.pointerEvents = 'all';
+    if(closeButton.classList.contains('vanish')) {
+      setTimeout(() => {
       closeButton.classList.remove('vanish');
       closeButton.classList.add('appear');
-    },700);
+      },700);
+    }
     
   });
 });
 
 closeButton.addEventListener('click', (e) => {
   const eventCard = document.querySelector('.event-card.expanded');
-  console.log(eventCard);
   const target = e.target;
-  console.log(target);
   const eventGrid = eventCard.parentNode;
   const eventGridId = eventGrid.dataset.id;
   const clearElements = document.querySelectorAll('.clear');
@@ -123,6 +123,7 @@ closeButton.addEventListener('click', (e) => {
   document.documentElement.style.overflow = 'auto';
   document.body.style.overflow = 'auto';  
   eventGrid.style.position = 'relative';
+  eventCardCarousel.style.pointerEvents = 'none';
   eventCard.style.cssText = `
     top: ${cardTop};
     left: ${cardLeft};

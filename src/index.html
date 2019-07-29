@@ -4,7 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
   <meta http-equifv="X-UA-Compatible" content="ie=edge">
-  
+  <meta name="Description" content="Asthivaara 2K19, Symposium by Civil Engineering Department of Easwari Engineering College"/>
+  <meta property="og:title" content="Asthivaara 2K19" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.asthivaara19.com" />
+  <meta property="og:description" content="Asthivaara 2K19, Symposium by Civil Engineering department of Easwari engineering college" />
+  <meta property="twitter:card" content="summary"/>
+  <meta name="twitter:description" content="Asthivaara 2K19, Symposium by Civil Engineering department of Easwari engineering college">
   <title>Asthivaara 2k19</title>
 
   <link rel="icon" href="../favicon.ico" type="image/x-icon" />
@@ -25,12 +31,12 @@
     </a>
     <nav class="nav">
       <ul class="nav__list">
-          <li class="nav__list-item"><a href="#">About Us</a></li>
-          <li class="nav__list-item"><a href="#">Gallery</a></li>
-          <li class="nav__list-item"><a href="#">Sponsors</a></li>
-          <li class="nav__list-item"><a href="#">Gallery</a></li>
+          <li class="nav__list-item"><a href="#about">About Us</a></li>
+          <li class="nav__list-item"><a href="#gallery">Gallery</a></li>
+          <!-- <li class="nav__list-item"><a href="#sponsors">Sponsors</a></li> -->
+          <li class="nav__list-item"><a href="#contact">Contact Us</a></li>
           <li class="nav__list-item"><a href="/events.html">Events</a></li>
-          <li class="nav__list-item"><a href="#">Map</a></li>
+          <li class="nav__list-item"><a href="#map">Map</a></li>
       </ul>
     </nav>
   </header>
@@ -47,13 +53,14 @@
         Navigate
       </header>
       <ul class="side-nav__content">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Events</a></li>
-        <li><a href="#">Register</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Sponsors</a></li>
-        <li><a href="#">Map</a></li>
-        <li><a href="#">Contact</a></li>
+        <a href="/"><li>Home</li></a>
+        <a href="#register"><li>Register</li></a>
+        <a href="#about"><li>About Us</li></a>
+        <a href="#gallery"><li>Gallery</li></a>
+        <!-- <li class="nav__list-item"><a href="#sponsors">Sponsors</a></li> -->
+        <a href="#contact"><li>Contact Us</li></a>
+        <a href="/events.html"><li>Events</li></a>
+        <a href="#map"><li>Map</li></a>
       </ul>
     </nav>
   </aside>
@@ -90,7 +97,7 @@
 
     <div class="hero__dept-info"><span>Symposium By</span><br>Department of Civil Engineering <br> Easwari Engineering College</div>
     <div class="hero__social">
-      <a href="https://instagram.com">Instagram</a>
+      <a href="https://www.instagram.com/asthivaara_2k19/" target="_blank">Instagram</a>
     </div>
   </div>
 
@@ -108,32 +115,33 @@
   </div>
 
   <main>
-    <div class="about" aria-label="About Us">
+    <div id="about" class="about" aria-label="About Us">
       <section class="about__section">
         <div class="about__text">
           <h2 class="heading about__heading">About Our College</h2>
           <p class="about__content">
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+              Easwari Engineering College, a unit of SRM Group of Educational Institutions for higher learning is functioning under “Valliammai Society”. The society was founded in the year 1981, for promoting the cause of Quality Education by
+              Dr.T.R.Pachamuthu, an academician and Educationist. EEC was instituted in the academic year 1996-1997, with the Approval of AICTE, New Delhi. The Institution is affiliated to Anna University, since 2002. The college has obtained ISO 9001:2008 Certiﬁcation from TUV South Asia. The college is accredited with ‘A’ Grade by NAAC.
           </p>
         </div>
         <div class="about__image-container">
-          <img class="about__image" src="./images/about_college.png" alt="A picture of Easwari Engineering College">
+          <img class="about__image" src="./images/about/about-college.jpg" alt="A picture of Easwari Engineering College">
         </div>
       </section>
       <section class="about__section">
         <div class="about__text">
-          <h2 class="heading about__heading">About Our Department</h2>
+          <h2 class="heading about__heading">About Asthivaara 2K19</h2>
           <p class="about__content">
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+            The Department of Civil Engineering has been established in the College since the year 2007-2008 with an annual intake of 60 students. The intake is increased to 120 from the academic year 2012-2013. PG Structural Engineering started in the year of 2013-14 with the intake of 18. The department is providing basic and advanced knowledge, inspiring and awakening young minds by vibrant teachers. The program is accredited by NBA.
           </p>
         </div>
         <div class="about__image-container">
-          <img class="about__image" src="./images/about_department.png" alt="A picture of the Civil Engineering Department">
+          <img class="about__image" src="./images/about/about-symposium.jpg" alt="A picture of the Civil Engineering Department">
         </div>
       </section>
     </div>
 
-    <section class="register">
+    <section id="register" class="register">
       <h2 class="heading register__heading">Register</h2>
       <div id="register_wrapper">
         <form id="register_form">
@@ -182,7 +190,7 @@
             <input type="text" name="user_college" id="college" placeholder="Enter your college" required>
             <span class="label">College</span>
           </label>
-          <button class="register__pay" type="button" value="Register" onclick="paymentGatewayHandler()">
+          <button class="register__pay" type="button" value="Register" value="Pay Registration Fee">
             Pay Registration Fee
           </button>
           <button class="register__submit" type="button" value="Register" disabled>
@@ -192,20 +200,23 @@
       </div>
     </section>
 
-    <section class="sponsors"></section>
-    <section class="gallery">
+    <section id="sponsors" class="sponsors"></section>
+    <section id="gallery" class="gallery">
       <h2 class="heading gallery__heading">Gallery</h2>
       <div class="gallery__container">
-        <img src="./images/about_college.png" alt="" class="gallery__item">
-        <img src="./images/about_college.png" alt="" class="gallery__item">
-        <img src="./images/about_college.png" alt="" class="gallery__item">
-        <img src="./images/about_college.png" alt="" class="gallery__item">
-        <img src="./images/about_college.png" alt="" class="gallery__item">
+        <img src="./images/gallery/gallery-1.jpg" alt="" class="gallery__item">
+        <img src="./images/gallery/gallery-2.jpg" alt="" class="gallery__item">
+        <img src="./images/gallery/gallery-3.jpg" alt="" class="gallery__item">
+        <img src="./images/gallery/gallery-4.jpg" alt="" class="gallery__item">
+        <img src="./images/gallery/gallery-5.jpg" alt="" class="gallery__item">
+        <img src="./images/gallery/gallery-6.jpg" alt="" class="gallery__item">
+        <img src="./images/gallery/gallery-7.jpg" alt="" class="gallery__item">
+        <img src="./images/gallery/gallery-8.jpg" alt="" class="gallery__item">
       </div>
       <img class="gallery__illustration" src="./images/building-illustration.svg" alt="A building illustration">
     </section>
     
-    <section class="map">
+    <section id="map" class="map">
       <h2 class="heading map__heading" hidden>Map</h2>
       <iframe width="100%" height="360" id="gmap_canvas" src="https://maps.google.com/maps?q=easwari%20engineering%20college%2C%20ramapuram&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
     </section>
@@ -213,20 +224,27 @@
   
   <footer>
     <div class="footer__social">
-
+      <a class="footer__social__link" href="https://www.instagram.com/asthivaara_2k19/" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="50" height="50"
+viewBox="0 0 172 172"
+style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g><path d="M132.44,20.64c-0.94993,0 -1.72,0.77007 -1.72,1.72c0,0.94993 0.77007,1.72 1.72,1.72c0.94993,0 1.72,-0.77007 1.72,-1.72c0,-0.94993 -0.77007,-1.72 -1.72,-1.72z" fill="#ffffff"></path><path d="M86,22.36c-35.1474,0 -63.64,28.4926 -63.64,63.64c0,35.1474 28.4926,63.64 63.64,63.64c35.1474,0 63.64,-28.4926 63.64,-63.64c0,-35.1474 -28.4926,-63.64 -63.64,-63.64z" fill="#ffffff"></path><path d="M142.76,18.92c-3.79972,0 -6.88,3.08028 -6.88,6.88c0,3.79972 3.08028,6.88 6.88,6.88c3.79972,0 6.88,-3.08028 6.88,-6.88c0,-3.79972 -3.08028,-6.88 -6.88,-6.88z" fill="#ffffff"></path><path d="M149.64,37.84c-1.89986,0 -3.44,1.54014 -3.44,3.44c0,1.89986 1.54014,3.44 3.44,3.44c1.89986,0 3.44,-1.54014 3.44,-3.44c0,-1.89986 -1.54014,-3.44 -3.44,-3.44z" fill="#ffffff"></path><path d="M139.32,127.28c-1.89986,0 -3.44,1.54014 -3.44,3.44c0,1.89986 1.54014,3.44 3.44,3.44c1.89986,0 3.44,-1.54014 3.44,-3.44c0,-1.89986 -1.54014,-3.44 -3.44,-3.44zM25.8,101.48c-3.79972,0 -6.88,3.08028 -6.88,6.88c0,3.79972 3.08028,6.88 6.88,6.88c3.79972,0 6.88,-3.08028 6.88,-6.88c0,-3.79972 -3.08028,-6.88 -6.88,-6.88z" fill="#ffffff"></path><path d="M43,146.2c-1.89986,0 -3.44,1.54014 -3.44,3.44c0,1.89986 1.54014,3.44 3.44,3.44c1.89986,0 3.44,-1.54014 3.44,-3.44c0,-1.89986 -1.54014,-3.44 -3.44,-3.44z" fill="#ffffff"></path><path d="M31.82,84.28c-2.37482,0 -4.3,1.92518 -4.3,4.3c0,2.37482 1.92518,4.3 4.3,4.3c2.37482,0 4.3,-1.92518 4.3,-4.3c0,-2.37482 -1.92518,-4.3 -4.3,-4.3zM136.74,55.04c-1.42489,0 -2.58,1.15511 -2.58,2.58c0,1.42489 1.15511,2.58 2.58,2.58c1.42489,0 2.58,-1.15511 2.58,-2.58c0,-1.42489 -1.15511,-2.58 -2.58,-2.58z" fill="#ffffff"></path><path d="M60.2,124.356c-6.88,0 -12.556,-5.676 -12.556,-12.556v-51.6c0,-6.88 5.676,-12.556 12.556,-12.556h51.6c6.88,0 12.556,5.676 12.556,12.556v51.6c0,6.88 -5.676,12.556 -12.556,12.556z" fill="#1fd490"></path><path d="M111.8,48.848c6.192,0 11.352,5.16 11.352,11.352v51.6c0,6.192 -5.16,11.352 -11.352,11.352h-51.6c-6.192,0 -11.352,-5.16 -11.352,-11.352v-51.6c0,-6.192 5.16,-11.352 11.352,-11.352h51.6M111.8,46.44h-51.6c-7.568,0 -13.76,6.192 -13.76,13.76v51.6c0,7.568 6.192,13.76 13.76,13.76h51.6c7.568,0 13.76,-6.192 13.76,-13.76v-51.6c0,-7.568 -6.192,-13.76 -13.76,-13.76z" fill="#472b29"></path><path d="M117.82,82.388v3.096v24.596c0,4.3 -3.44,7.74 -7.74,7.74h-48.16c-4.3,0 -7.74,-3.44 -7.74,-7.74v-48.16c0,-4.3 3.44,-7.74 7.74,-7.74h43.688h4.472c4.3,0 7.74,3.44 7.74,7.74v5.848v3.44v1.72v1.892v4.988v2.58" fill="#1fd490"></path><path d="M117.82,81.528c-0.516,0 -0.86,-0.344 -0.86,-0.86v-6.708c0,-0.516 0.344,-0.86 0.86,-0.86c0.516,0 0.86,0.344 0.86,0.86v6.708c0,0.516 -0.344,0.86 -0.86,0.86zM117.82,69.66c-0.516,0 -0.86,-0.344 -0.86,-0.86v-3.44c0,-0.516 0.344,-0.86 0.86,-0.86c0.516,0 0.86,0.344 0.86,0.86v3.44c0,0.516 -0.344,0.86 -0.86,0.86z" fill="#472b29"></path><path d="M110.08,118.68h-48.16c-4.816,0 -8.6,-3.784 -8.6,-8.6v-48.16c0,-4.816 3.784,-8.6 8.6,-8.6h43.688c0.516,0 0.86,0.344 0.86,0.86c0,0.516 -0.344,0.86 -0.86,0.86h-43.688c-3.784,0 -6.88,3.096 -6.88,6.88v48.16c0,3.784 3.096,6.88 6.88,6.88h48.16c3.784,0 6.88,-3.096 6.88,-6.88v-24.768c0,-0.516 0.344,-0.86 0.86,-0.86c0.516,0 0.86,0.344 0.86,0.86v24.768c0,4.816 -3.784,8.6 -8.6,8.6z" fill="#472b29"></path><path d="M79.12,105.78c-7.052,0 -12.9,-5.848 -12.9,-12.9v-13.76c0,-7.052 5.848,-12.9 12.9,-12.9h13.76c7.052,0 12.9,5.848 12.9,12.9v13.76c0,7.052 -5.848,12.9 -12.9,12.9z" fill="#1fd490"></path><path d="M92.88,67.08c6.708,0 12.04,5.332 12.04,12.04v13.76c0,6.708 -5.332,12.04 -12.04,12.04h-13.76c-6.708,0 -12.04,-5.332 -12.04,-12.04v-13.76c0,-6.708 5.332,-12.04 12.04,-12.04h13.76M92.88,65.36h-13.76c-7.568,0 -13.76,6.192 -13.76,13.76v13.76c0,7.568 6.192,13.76 13.76,13.76h13.76c7.568,0 13.76,-6.192 13.76,-13.76v-13.76c0,-7.568 -6.192,-13.76 -13.76,-13.76z" fill="#472b29"></path><g><path d="M86,76.54c-5.22461,0 -9.46,4.23539 -9.46,9.46c0,5.22461 4.23539,9.46 9.46,9.46c5.22461,0 9.46,-4.23539 9.46,-9.46c0,-5.22461 -4.23539,-9.46 -9.46,-9.46z" fill="#1fd490"></path><path d="M86,77.4c4.816,0 8.6,3.784 8.6,8.6c0,4.816 -3.784,8.6 -8.6,8.6c-4.816,0 -8.6,-3.784 -8.6,-8.6c0,-4.816 3.784,-8.6 8.6,-8.6M86,75.68c-5.676,0 -10.32,4.644 -10.32,10.32c0,5.676 4.644,10.32 10.32,10.32c5.676,0 10.32,-4.644 10.32,-10.32c0,-5.676 -4.644,-10.32 -10.32,-10.32z" fill="#472b29"></path></g><g><path d="M97.18,72.24c-1.42489,0 -2.58,1.15511 -2.58,2.58c0,1.42489 1.15511,2.58 2.58,2.58c1.42489,0 2.58,-1.15511 2.58,-2.58c0,-1.42489 -1.15511,-2.58 -2.58,-2.58z" fill="#1fd490"></path><path d="M97.18,78.26c-1.892,0 -3.44,-1.548 -3.44,-3.44c0,-1.892 1.548,-3.44 3.44,-3.44c1.892,0 3.44,1.548 3.44,3.44c0,1.892 -1.548,3.44 -3.44,3.44zM97.18,73.1c-1.032,0 -1.72,0.688 -1.72,1.72c0,1.032 0.688,1.72 1.72,1.72c1.032,0 1.72,-0.688 1.72,-1.72c0,-1.032 -0.688,-1.72 -1.72,-1.72z" fill="#472b29"></path></g></g></g></svg>
+</a>
     </div>
     <div class="footer__container">
       <nav class="nav nav--footer">
         <ul class="nav__list">
-          <li class="nav__list-item">About Us</li>
-          <li class="nav__list-item">Gallery</li>
-          <li class="nav__list-item">Sponsors</li>
-          <li class="nav__list-item">Gallery</li>
-          <li class="nav__list-item">Events</li>
-          <li class="nav__list-item">Map</li>
-        </ul>
+          <li class="nav__list-item"><a href="/">Home</a></li>
+          <li class="nav__list-item"><a href="#register">Register</a></li>
+          <li class="nav__list-item"><a href="#about">About Us</a></li>
+          <li class="nav__list-item"><a href="#gallery">Gallery</a></li>
+          <!-- <li class="nav__list-item"><a href="#sponsors">Sponsors</a></li> -->
+          <li class="nav__list-item"><a href="#contact">Contact Us</a></li>
+          <li class="nav__list-item"><a href="/events.html">Events</a></li>
+          <li class="nav__list-item"><a href="#map">Map</a></li>
+      </ul>
       </nav>
-      <section class="footer__contact">
+      <section id="contact" class="footer__contact">
         <h2 class="heading contact__heading">Get in Touch</h2>
         <dl class="contact__list">
   
@@ -247,9 +265,27 @@
     </div>
     <div class="footer__copyright-info">Copyright © | Easwari Engineering College</div>
   </footer>
-  <script>
-    
+
+  <div class="loader-wrapper">
+    <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+    <script>
+      document.documentElement.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden';
+      window.onload = function() {
+        document.querySelector('.loader-wrapper').style.display = 'none';
+        document.documentElement.style.overflow = 'auto';
+        document.body.style.overflow = 'auto';
+      };
+    </script>
+
+  <script src="http://js.instamojo.com/v1/checkout.js">
+  
   </script>
-  <script src="https://js.instamojo.com/v1/checkout.js"></script>
+  <script type="text/javascript">
+  const payButton = document.querySelector('.register__pay');
+  console.log(payButton);
+ 
+  </script>
 </body>
 </html>
