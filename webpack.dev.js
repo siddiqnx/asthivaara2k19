@@ -53,7 +53,7 @@ module.exports = merge(common, {
     })
   ],
   devServer: {
-    host: '192.168.1.3',
+    host: '192.168.1.6',
     port: 9000,
     writeToDisk:true
   }

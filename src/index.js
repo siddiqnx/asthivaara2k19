@@ -5,3 +5,4 @@ import './js/app';
 import './js/countdown';
 import './js/side-nav';
 import './js/registration';
+import './js/map'

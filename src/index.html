@@ -216,10 +216,10 @@
       <img class="gallery__illustration" src="./images/building-illustration.svg" alt="A building illustration">
     </section>
     
-    <section id="map" class="map">
+    <div id="map" class="map">
       <h2 class="heading map__heading" hidden>Map</h2>
-      <iframe width="100%" height="360" id="gmap_canvas" src="https://maps.google.com/maps?q=easwari%20engineering%20college%2C%20ramapuram&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-    </section>
+      
+    </div>
   </main>
   
   <footer>
@@ -268,23 +268,116 @@ style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-w
 
   <div class="loader-wrapper">
     <span class="loader"><span class="loader-inner"></span></span>
-    </div>
-    <script>
-      document.documentElement.style.overflow = 'hidden';
-      document.body.style.overflow = 'hidden';
-      window.onload = function() {
-        document.querySelector('.loader-wrapper').style.display = 'none';
-        document.documentElement.style.overflow = 'auto';
-        document.body.style.overflow = 'auto';
-      };
-    </script>
+  </div>
+
+  <script>
+    document.documentElement.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
+    window.onload = function() {
+      document.querySelector('.loader-wrapper').style.display = 'none';
+      document.documentElement.style.overflow = 'auto';
+      document.body.style.overflow = 'auto';
+    };
+    var map;
+    var loc = {lat: 13.033138, lng: 80.178247};
+    function initMap() {
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: loc,
+        zoom: 14,
+        styles: [
+          {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
+          {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
+          {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
+          {
+            featureType: 'administrative.locality',
+            elementType: 'labels.text.fill',
+            stylers: [{color: '#d59563'}]
+          },
+          {
+            featureType: 'poi',
+            elementType: 'labels.text.fill',
+            stylers: [{color: '#d59563'}]
+          },
+          {
+            featureType: 'poi.park',
+            elementType: 'geometry',
+            stylers: [{color: '#263c3f'}]
+          },
+          {
+            featureType: 'poi.park',
+            elementType: 'labels.text.fill',
+            stylers: [{color: '#6b9a76'}]
+          },
+          {
+            featureType: 'road',
+            elementType: 'geometry',
+            stylers: [{color: '#38414e'}]
+          },
+          {
+            featureType: 'road',
+            elementType: 'geometry.stroke',
+            stylers: [{color: '#212a37'}]
+          },
+          {
+            featureType: 'road',
+            elementType: 'labels.text.fill',
+            stylers: [{color: '#9ca5b3'}]
+          },
+          {
+            featureType: 'road.highway',
+            elementType: 'geometry',
+            stylers: [{color: '#746855'}]
+          },
+          {
+            featureType: 'road.highway',
+            elementType: 'geometry.stroke',
+            stylers: [{color: '#1f2835'}]
+          },
+          {
+            featureType: 'road.highway',
+            elementType: 'labels.text.fill',
+            stylers: [{color: '#f3d19c'}]
+          },
+          {
+            featureType: 'transit',
+            elementType: 'geometry',
+            stylers: [{color: '#2f3948'}]
+          },
+          {
+            featureType: 'transit.station',
+            elementType: 'labels.text.fill',
+            stylers: [{color: '#d59563'}]
+          },
+          {
+            featureType: 'water',
+            elementType: 'geometry',
+            stylers: [{color: '#17263c'}]
+          },
+          {
+            featureType: 'water',
+            elementType: 'labels.text.fill',
+            stylers: [{color: '#515c6d'}]
+          },
+          {
+            featureType: 'water',
+            elementType: 'labels.text.stroke',
+            stylers: [{color: '#17263c'}]
+          }
+        ]
+      });
+
+      var marker = new google.maps.Marker({position: loc, map: map});
+    }
+
+  </script>
 
   <script src="http://js.instamojo.com/v1/checkout.js">
   
   </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBk30HWsNQ0seajNRAbtVGsZfZUHn4E7gI&callback=initMap"
+  async defer></script>
   <script type="text/javascript">
   const payButton = document.querySelector('.register__pay');
-  console.log(payButton);
  
   </script>
 </body>
