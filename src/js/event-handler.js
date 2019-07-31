@@ -95,7 +95,8 @@ eventCards.forEach((eventCard, i) => {
     eventGrid.style.left = '0px';
     eventCard.style.top = '0px';
     eventCard.style.left = '0px';
-      document.querySelector('.event-card.expanded').style.transform = `translateY(${window.scrollY}px)`;
+    document.querySelector('.events-grid.expanded').style.transform = `translateY(${window.scrollY}px)`;
+      
     eventSectionHeadings.forEach((heading) => {
       heading.classList.remove('appear');
       heading.classList.add('vanish');

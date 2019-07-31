@@ -85,6 +85,9 @@
     border-radius: 5px;
     @include transition;
     box-shadow: black 0px 0px 5rem;
+    &:active {
+      box-shadow: 0 0 3rem #DA1B60;
+    }
     &:hover {
       transform: scale(1.05);
     }

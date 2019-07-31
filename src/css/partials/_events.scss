@@ -53,23 +53,16 @@ main {
   background-color: $c-dark;
   box-shadow: rgb(0, 0, 0) 0px 0px 5rem;
   will-change: left;
-  // &:before {
-  //   position: absolute;
-  //   content: "";
-  //   z-index: -1;
-  //   bottom: 12px;
-  //   left: 30px;
-  //   right: 30px;
-  //   top: 14px;
-  //   background: #FFF;
-  //   box-shadow: 0 0 30px 17px #486685;
-  //   border-radius: 100px/10px; 
-  // }
+  transition: transform .2s cubic-bezier(.39,.58,.57,1);
 
   &__title {
     margin: 0 auto;
     align-self: center;
     justify-self: center;
+  }
+
+  &:hover {
+    transform: translate3d(0, -10px, 0) scale3d(1.1, 1.05, 1);
   }
 }
 

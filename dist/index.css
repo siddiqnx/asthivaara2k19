@@ -588,6 +588,8 @@ a[href^="#"] {
     transition: transform 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
     box-shadow: black 0px 0px 5rem;
     text-align: center; }
+    .hero__button:active {
+      box-shadow: 0 0 3rem #DA1B60; }
     .hero__button:hover {
       transform: scale(1.05); }
     .hero__button--register {
@@ -684,7 +686,7 @@ a[href^="#"] {
     width: 40vw;
     display: block;
     border-radius: 5px;
-    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: black 0px 0px 5rem;
     height: 500px;
     -o-object-fit: cover;
        object-fit: cover; }
@@ -810,7 +812,7 @@ a[href^="#"] {
   box-shadow: none; }
 
 #register::after {
-  content: 'Registration will open on August 1';
+  content: 'Registration will open on August 5';
   position: absolute;
   top: 0;
   left: 0;
@@ -821,7 +823,7 @@ a[href^="#"] {
   opacity: .6;
   text-align: center;
   line-height: 100px;
-  font-size: 80px;
+  font-size: 50px;
   overflow-wrap: break-word;
   padding-top: 536px;
   padding-right: 20px;
@@ -908,11 +910,14 @@ main {
   cursor: pointer;
   background-color: #131317;
   box-shadow: black 0px 0px 5rem;
-  will-change: left; }
+  will-change: left;
+  transition: transform 0.2s cubic-bezier(0.39, 0.58, 0.57, 1); }
   .event-card__title {
     margin: 0 auto;
     align-self: center;
     justify-self: center; }
+  .event-card:hover {
+    transform: translate3d(0, -10px, 0) scale3d(1.1, 1.05, 1); }
 
 .events--all .event-card .event-card__title {
   -webkit-background-clip: text;
@@ -1025,17 +1030,13 @@ body {
 .carousel__button--next {
   position: fixed;
   top: 50%;
-  width: 3rem;
-  height: 3rem;
-  background-color: #131317;
+  width: 2.5rem;
+  height: 4rem;
+  background-color: #DA1B60;
   transform: translateY(-50%);
-  border-radius: 50%;
+  border-radius: 5px;
   cursor: pointer;
-  z-index: 1001;
-  /* Sit on top of everything */
-  border: 1px solid black;
-  /*  opacity: 0;  Hide buttons until carousel is initialised 
-  transition:opacity 1s;*/ }
+  z-index: 1001; }
 
 .carousel__button--prev {
   left: 0;
@@ -1300,17 +1301,18 @@ body {
   .about__section + .about__section {
     margin-top: 0; }
   .about__image-container {
-    display: none;
+    display: block;
     position: absolute;
-    z-index: -1;
-    opacity: 0.2;
     left: 0;
-    top: 0;
+    top: 210px;
     width: 100%;
-    height: 100%; }
+    height: 225px; }
+  .about__content {
+    margin-top: 300px; }
   .about__image {
-    width: 100vw;
-    height: 100%; }
+    width: 75vw;
+    height: 100%;
+    margin: 0 auto; }
   .about__text {
     padding-top: 50px; }
   .register {
@@ -1369,6 +1371,8 @@ body {
     padding: 0 35px; }
   .about__content {
     width: 100%; }
+  .about__image-container {
+    top: 165px; }
   .gallery__illustration {
     width: 75vw; } }
 
@@ -1398,6 +1402,10 @@ body {
   .events .heading {
     font-size: 1.7rem; } }
 
+@media only screen and (max-width: 516px) {
+  .about__section:nth-child(2) .about__image-container {
+    top: 210px; } }
+
 @media only screen and (max-width: 480px) {
   .multi-lang {
     font-size: .5rem; }
@@ -1407,6 +1415,10 @@ body {
     .multi-lang__list__item:nth-child(8) {
       bottom: 30px;
       right: 5vw; } }
+
+@media only screen and (max-width: 447px) {
+  .about__image-container {
+    top: 200px; } }
 
 @media only screen and (min-height: 935px) {
   .hero {
