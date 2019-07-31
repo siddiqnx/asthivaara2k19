@@ -4,9 +4,8 @@ const internalLinks = document.querySelectorAll('a[href^="#"]');
 let isAtTheTop = true;
 document.onload = function() {
   if(headerLogo.classList.contains('home')) {
-    isAtTheTop = window.scrollY ? false : true;    
+    isAtTheTop = window.scrollY ? false : true; 
   }
-  
 }
 
 if(!headerLogo.classList.contains('home')) {
@@ -19,9 +18,12 @@ if(headerLogo.classList.contains('home')) {
     if(isAtTheTop) {
       headerLogo.classList.remove('show');
       headerLogo.classList.add('hide');
+      header.style.boxShadow = 'none';
     } 
     else if(!isAtTheTop) {
       headerLogo.classList.add('show');
+      header.style.boxShadow = 'black 0px 0px 5rem';
+      // console.log(header);
     }
   });
   

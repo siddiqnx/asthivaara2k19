@@ -5,31 +5,45 @@
 .header__menu-toggle {
   display: none;
   position: absolute;
-  right: 10px;
+  right: 0px;
   line-height: 50px;
   background: none;
   border: none;
-  width: 33px;
-  height: 24px;
+  width: 75px;
+  height: 100%;
   padding: 0;
   margin: 0;
-  margin-top: 19px;
   color: #FFF;
   cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  transition: opacity .2s linear, transform .1s linear;
+}
+
+
+.header__menu-toggle:active {
+  opacity: .3;
+  background: $c-secondary;
 }
 
 .nav-toggle-bar, .nav-toggle-bar::after, .nav-toggle-bar::before {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%) translateX(-50%);
-  transition: all 0.5s ease;
-  background: $c-primary;
-  content: '';
+  width: 35px;
   height: 4px;
-  width: 100%;
+  background-color: $c-primary;
   border-radius: 5px;
 }
 
+.nav-toggle-bar {
+  position: relative;
+  margin-top: 11.5px;
+}
+
+.nav-toggle-bar::after, .nav-toggle-bar::before {
+  left: 50%;
+  transform: translateX(-50%);
+  content: '';
+  position: absolute;
+}
 
 .nav-toggle-bar { margin-top: 0; }
 

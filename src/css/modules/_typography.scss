@@ -27,9 +27,9 @@
 }
 
 //font-family
-$ff-ss: "IBM-Plex-Sans";
-$ff-s: "YesevaOne";
-$ff-m: "FiraCode-Retina";
+$ff-ss: -apple-system, BlinkMacSystemFont, "IBM-Plex-Sans", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$ff-s: "YesevaOne", Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;;
+$ff-m: "FiraCode-Retina", Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
 //font-size
 $fs-s: .8rem;
 $fs-n: 1rem;

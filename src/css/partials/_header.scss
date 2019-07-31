@@ -3,7 +3,6 @@
   width: 100%;
   background: $c-dark;
   z-index: 999;
-
   &__logo:active &__logo__title, &__logo:active &__logo__img {
     transform: translateX(5px);
   }

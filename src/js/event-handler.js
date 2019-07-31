@@ -13,7 +13,7 @@ const eventsGrids = document.querySelectorAll('.events-grid');
 const eventCardCarousels = document.querySelectorAll('.carousel-wrapper');
 const closeButton = document.querySelector('.close-button img');
 const eventSectionHeadings = document.querySelectorAll('.heading');
-
+const header = document.querySelector('.header');
 // Init: each card ->  set dataset id i
 //                 ->  initalize cardWidth and cardHeight
 //                 ->  set left & top to 0 (after 500ms)
@@ -25,6 +25,7 @@ const eventSectionHeadings = document.querySelectorAll('.heading');
 // else expand
 
 window.onload = function() {
+  header.style.boxShadow = 'none';
   document.querySelector('.loader-wrapper').style.display = 'none';
   document.documentElement.style.overflow = 'auto';
   document.body.style.overflow = 'auto';
@@ -52,6 +53,16 @@ window.onload = function() {
     button.classList.add('vanish');
   })
 };
+
+window.addEventListener('scroll', () => {
+  isAtTheTop = window.scrollY ? false : true;
+  if(isAtTheTop) {
+    header.style.boxShadow = 'none';
+  } 
+  else if(!isAtTheTop) {
+    header.style.boxShadow = 'black 0px 0px 5rem';
+  }
+});
 
 eventCards.forEach((eventCard, i) => {
 
