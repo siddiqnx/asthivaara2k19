@@ -23,7 +23,6 @@ if(headerLogo.classList.contains('home')) {
     else if(!isAtTheTop) {
       headerLogo.classList.add('show');
       header.style.boxShadow = 'black 0px 0px 5rem';
-      // console.log(header);
     }
   });
   

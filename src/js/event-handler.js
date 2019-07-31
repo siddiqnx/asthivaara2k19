@@ -14,15 +14,6 @@ const eventCardCarousels = document.querySelectorAll('.carousel-wrapper');
 const closeButton = document.querySelector('.close-button img');
 const eventSectionHeadings = document.querySelectorAll('.heading');
 const header = document.querySelector('.header');
-// Init: each card ->  set dataset id i
-//                 ->  initalize cardWidth and cardHeight
-//                 ->  set left & top to 0 (after 500ms)
-//                 ->  set width and height to cardWidth & cardHeight (after     500ms)
-
-// expand:
-// if expanded -> contract
-// clicked eventCard -> width: 100% height: 100% 
-// else expand
 
 window.onload = function() {
   header.style.boxShadow = 'none';
@@ -83,7 +74,6 @@ eventCards.forEach((eventCard, i) => {
     cardLeft = eventCard.style.left;
     gridLeft = eventGrid.style.left;
     gridTop = eventGrid.style.top;
-    // eventGrid.style.width = '100%';
     eventCard.style.width = '';
     eventCard.style.height = '';
     notClearElements.forEach((element) => {
@@ -105,10 +95,7 @@ eventCards.forEach((eventCard, i) => {
     eventGrid.style.left = '0px';
     eventCard.style.top = '0px';
     eventCard.style.left = '0px';
-    //setTimeout(() => {
-      //document.querySelector('.event-card.expanded').style.transition = 'transform 1s';
       document.querySelector('.event-card.expanded').style.transform = `translateY(${window.scrollY}px)`;
-    //}, 800);
     eventSectionHeadings.forEach((heading) => {
       heading.classList.remove('appear');
       heading.classList.add('vanish');
