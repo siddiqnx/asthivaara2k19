@@ -6,6 +6,7 @@ document.onload = function() {
   if(headerLogo.classList.contains('home')) {
     isAtTheTop = window.scrollY ? false : true;    
   }
+  
 }
 
 if(!headerLogo.classList.contains('home')) {
@@ -23,6 +24,7 @@ if(headerLogo.classList.contains('home')) {
       headerLogo.classList.add('show');
     }
   });
+  
 }
 
 internalLinks.forEach((link) => {

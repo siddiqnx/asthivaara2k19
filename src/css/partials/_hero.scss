@@ -83,6 +83,7 @@
     letter-spacing: 5px;
     border-radius: 5px;
     @include transition;
+    box-shadow: black 0px 0px 5rem;
     &:hover {
       transform: scale(1.05);
     }

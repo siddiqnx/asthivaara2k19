@@ -47,11 +47,16 @@ window.onload = function() {
     height: ${gridHeight[i]};`;
   });
   closeButton.classList.add('vanish');
+  document.querySelectorAll('.carousel__button').forEach((button) => {
+    button.style.display = 'none';
+    button.classList.add('vanish');
+  })
 };
 
 eventCards.forEach((eventCard, i) => {
 
   eventCard.addEventListener('click', (e) => {
+    
     const eventCard = e.target.closest('.event-card');
     const eventGrid = eventCard.parentNode;
     const eventSection = eventGrid.parentNode;
@@ -60,7 +65,6 @@ eventCards.forEach((eventCard, i) => {
     const eventCardCarousel = eventCard.querySelector('.carousel-wrapper');
     eventSectionWidth = eventSectionWidth == 0 ? window.getComputedStyle(eventSection).getPropertyValue('width') : eventSectionWidth;
     eventSectionHeight = eventSectionHeight == 0 ? window.getComputedStyle(eventSection).getPropertyValue('height') : eventSectionHeight;
-
     const notClearElements = document.querySelectorAll(`.event-card:not([data-id="${eventCardId}"])`);
     document.documentElement.style.overflow = 'hidden';
     document.body.style.overflow = 'hidden';
@@ -103,10 +107,17 @@ eventCards.forEach((eventCard, i) => {
     eventCardCarousel.classList.add('appear');
     eventCardCarousel.removeAttribute('data-hidden');
     eventCardCarousel.style.pointerEvents = 'all';
+    document.querySelectorAll('.carousel__button').forEach((button) => {
+      button.style.display = 'block';
+    })
     if(closeButton.classList.contains('vanish')) {
       setTimeout(() => {
       closeButton.classList.remove('vanish');
       closeButton.classList.add('appear');
+      document.querySelectorAll('.carousel__button').forEach((button) => {
+        button.classList.remove('vanish');
+        button.classList.add('appear');
+      })
       },700);
     }
     
@@ -148,4 +159,8 @@ closeButton.addEventListener('click', (e) => {
   eventCardCarousel.classList.add('vanish');
   closeButton.classList.remove('appear');
   closeButton.classList.add('vanish');
+  document.querySelectorAll('.carousel__button').forEach((button) => {
+    button.classList.remove('appear');
+    button.classList.add('vanish');
+  })
 });

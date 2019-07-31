@@ -68,7 +68,7 @@ body {
 /* Style navigation buttons to sit in the middle, either side of the carousel. */
 .carousel__button--prev,
 .carousel__button--next {
-  position: absolute;
+  position: fixed;
   top:50%;
   width: 3rem;
   height: 3rem;

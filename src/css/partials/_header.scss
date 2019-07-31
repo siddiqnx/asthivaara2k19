@@ -3,9 +3,16 @@
   width: 100%;
   background: $c-dark;
   z-index: 999;
+
+  &__logo:active &__logo__title, &__logo:active &__logo__img {
+    transform: translateX(5px);
+  }
+  
   &__logo__img {
     height: 60px;
     vertical-align: middle;
+    user-select: none;
+    transition: transform .1s ease-in-out;
   }
 
   &__logo__title {
@@ -13,6 +20,8 @@
     font-weight: $fw-n;
     text-transform: uppercase;
     letter-spacing: 1px;
+    display: inline-block;
+    transition: transform .1s ease-in-out;
   }
   
   .nav {

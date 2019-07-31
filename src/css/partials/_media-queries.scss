@@ -78,6 +78,11 @@
 
   .hero {
     grid-template-columns: 100px 1fr 210px .5fr 210px 1fr 100px;
+    &__logo {
+      &__title {
+        font-size: 2.5rem;
+      }
+    }
   }
 
   .hero__logo__img {

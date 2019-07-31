@@ -5,18 +5,37 @@
 .header__menu-toggle {
   display: none;
   position: absolute;
-  right: 50px;
+  right: 10px;
   line-height: 50px;
   background: none;
   border: none;
-  width: 24px;
+  width: 33px;
   height: 24px;
   padding: 0;
   margin: 0;
-  margin-top: 10px;
+  margin-top: 19px;
   color: #FFF;
   cursor: pointer;
 }
+
+.nav-toggle-bar, .nav-toggle-bar::after, .nav-toggle-bar::before {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  transition: all 0.5s ease;
+  background: $c-primary;
+  content: '';
+  height: 4px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+
+.nav-toggle-bar { margin-top: 0; }
+
+.nav-toggle-bar::after { margin-top: 0.5rem; width: 75%; }
+
+.nav-toggle-bar::before { margin-top: -0.5rem; width: 75%; }
 
 .side-nav {
   position: fixed;
@@ -126,3 +145,4 @@
 .side-nav__content li:hover {
   background: darken($c-primary, 10%);
 }
+
