@@ -20,7 +20,10 @@ module.exports = {
         test: /\.html$/,
         use: [
           {
-            loader: "html-loader"
+            loader: "html-loader",
+            options: {
+              attrs: ['img:data-lazy', 'img:src']
+            }
           }
         ]
       },

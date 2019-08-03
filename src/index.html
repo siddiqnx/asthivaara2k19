@@ -24,15 +24,15 @@
 </head>
 <body>
 
-  <header class="header">
+  <header class="header" aria-label="Header">
     <button class="js-menu-show header__menu-toggle material-icons" data-aos="slide-left" aria-label="Navigation Toggle">
       <div class="nav-toggle-bar"></div>
     </button>
     <a href="/" class="header__logo hide home" >
-      <img class="header__logo__img " src="./images/logo.png" alt="Asthivaara 2K19 Logo" data-aos="slide-right">
+      <img class="header__logo__img " data-lazy="./images/logo.png" alt="Asthivaara 2K19 Logo" data-aos="slide-right">
       <span class="header__logo__title" data-aos="slide-down">Asthivaara 2K19</span>
     </a>
-    <nav class="nav">
+    <nav class="nav" role="navigation" aria-label="Main Navigation">
       <ul class="nav__list">
           <li class="nav__list-item" data-aos="slide-down" data-aos-delay="50"><a href="#about">About Us</a></li>
           <li class="nav__list-item" data-aos="slide-down" data-aos-delay="150"><a href="#gallery">Gallery</a></li>
@@ -44,9 +44,9 @@
     </nav>
   </header>
 
-  <aside class="js-side-nav side-nav">
+  <aside class="js-side-nav side-nav" role="navigation" aria-label="Navigation Sidebar">
     <nav class="js-side-nav-container side-nav__container">
-      <button class="js-menu-hide side-nav__hide material-icons">
+      <button class="js-menu-hide side-nav__hide material-icons" aria-label="Navigation Close">
         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
         width="30" height="30"
         viewBox="0 0 172 172"
@@ -70,11 +70,11 @@
 
   <div class="hero">
     <div class="hero__logo" data-aos="fade-up">
-      <img class="hero__logo__img" src="./images/logo.png" alt="Asthivaara 2K19 Logo">
+      <img class="hero__logo__img" data-lazy="./images/logo.png" alt="Asthivaara 2K19 Logo">
       <h1 class="hero__logo__title">Asthivaara 2K19</h1>
     </div>
 
-    <div class="hero__countdown" data-aos-delay="800" data-aos="zoom-in">
+    <div class="hero__countdown" data-aos-delay="800" data-aos="zoom-in" aria-label="Event Countdown">
       <span class="countdown_item">
         <span class="countdown_num">00</span>
         <span class="countdown_unit"> Days </span>
@@ -94,18 +94,18 @@
     </div>  
     
     <div class="hero__buttons">
-      <a href="#register" class ="hero__button hero__button--register" data-aos="zoom-out-up">Register</a>
-      <a href="/events.html" class="hero__button hero__button--events" data-aos="zoom-in-up">Events</a>
+      <a href="#register" class ="hero__button hero__button--register" data-aos="zoom-out-up" aria-label="Register">Register</a>
+      <a href="/events.html" class="hero__button hero__button--events" data-aos="zoom-in-up" aria-label="Events">Events</a>
     </div>
 
-    <div class="hero__dept-info"><span>Symposium By</span><br>Department of Civil Engineering <br> Easwari Engineering College</div>
-    <div class="hero__social" data-aos="slide-left">
+    <div class="hero__dept-info" aria-label="Department Information"><span>Symposium By</span><br>Department of Civil Engineering <br> Easwari Engineering College</div>
+    <div class="hero__social" data-aos="slide-left" aria-label="Event Social Media Links"">
       <a href="https://www.instagram.com/asthivaara_2k19/" rel="noopener" target="_blank">Instagram</a>
     </div>
   </div>
 
-  <div class="multi-lang">
-    <ul class="multi-lang__list">
+  <div class="multi-lang" aria-label="Event Name in Multiple Languages">
+    <ul class="multi-lang__list" aria-hidden="true">
       <li class="multi-lang__list__item">அஸ்திவாரா ௨௦௧௯ </li>
       <li class="multi-lang__list__item">استیوارا ٢٠١٩</li>
       <li class="multi-lang__list__item">ఆస్తివారా 2019</li>
@@ -117,7 +117,7 @@
     </ul>
   </div>
 
-  <main>
+  <main aria-label="Main Section">
     <div id="about" class="about" aria-label="About Us">
       <section class="about__section">
         <div class="about__text">
@@ -128,7 +128,7 @@
           </p>
         </div>
         <div class="about__image-container" data-aos="fade-left">
-          <img class="about__image" src="./images/about/about-college.jpg" alt="A picture of Easwari Engineering College">
+          <img class="about__image" data-lazy="./images/about/about-college.jpg" alt="A picture of Easwari Engineering College">
         </div>
       </section>
       <section class="about__section">
@@ -139,7 +139,7 @@
           </p>
         </div>
         <div class="about__image-container" data-aos="fade-right">
-          <img class="about__image" src="./images/about/about-symposium.jpg" alt="A picture of the Civil Engineering Department">
+          <img class="about__image" data-lazy="./images/about/about-symposium.jpg" alt="A picture of the Civil Engineering Department">
         </div>
       </section>
     </div>
@@ -158,7 +158,7 @@
             <span class="label">Registration For</span>
           </label>
           <label type="text" for="name" data-aos="fade-left" data-aos-duration="400">
-            <input type="text" name="user_name" id="name" placeholder="Enter your name" required>
+            <input type="text" name="user_name" id="name" placeholder="Enter your name" required aria-label="name">
             <span class="label">Name</span>
           </label>
           <label type="text" for="email" data-aos="fade-right" data-aos-duration="400">
@@ -207,16 +207,16 @@
     <section id="gallery" class="gallery">
       <h2 class="heading gallery__heading">Gallery</h2>
       <div class="gallery__container">
-        <img src="./images/gallery/gallery-1.jpg" alt="" class="gallery__item" data-aos="fade-left">
-        <img src="./images/gallery/gallery-2.jpg" alt="" class="gallery__item" data-aos="fade-left" data-aos-delay="50">
-        <img src="./images/gallery/gallery-3.webp" alt="" class="gallery__item" data-aos="fade-left" data-aos-delay="100">
-        <img src="./images/gallery/gallery-4.webp" alt="" class="gallery__item" data-aos="fade-left" data-aos-delay="150">
-        <img src="./images/gallery/gallery-5.webp" alt="" class="gallery__item" data-aos="fade-left" data-aos-delay="200">
-        <img src="./images/gallery/gallery-6.jpg" alt="" class="gallery__item" data-aos="fade-left" data-aos-delay="250">
-        <img src="./images/gallery/gallery-7.webp" alt="" class="gallery__item" data-aos="fade-left" data-aos-delay="300">
-        <img src="./images/gallery/gallery-8.jpg" alt="" class="gallery__item" data-aos="fade-left" data-aos-delay="350">
+        <img data-lazy="./images/gallery/gallery-1.jpg" alt="" class="gallery__item" data-aos="fade-left">
+        <img data-lazy="./images/gallery/gallery-2.jpg" alt="" class="gallery__item" data-aos="fade-left" data-aos-delay="50">
+        <img data-lazy="./images/gallery/gallery-3.webp" alt="" class="gallery__item" data-aos="fade-left" data-aos-delay="100">
+        <img data-lazy="./images/gallery/gallery-4.webp" alt="" class="gallery__item" data-aos="fade-left" data-aos-delay="150">
+        <img data-lazy="./images/gallery/gallery-5.webp" alt="" class="gallery__item" data-aos="fade-left" data-aos-delay="200">
+        <img data-lazy="./images/gallery/gallery-6.jpg" alt="" class="gallery__item" data-aos="fade-left" data-aos-delay="250">
+        <img data-lazy="./images/gallery/gallery-7.webp" alt="" class="gallery__item" data-aos="fade-left" data-aos-delay="300">
+        <img data-lazy="./images/gallery/gallery-8.jpg" alt="" class="gallery__item" data-aos="fade-left" data-aos-delay="350">
       </div>
-      <img class="gallery__illustration" src="./images/building-illustration.svg" alt="A building illustration" data-aos="flip-up">
+      <img class="gallery__illustration" data-lazy="./images/building-illustration.svg" alt="A building illustration" data-aos="flip-up">
     </section>
     
     <div id="map" class="map">
@@ -225,9 +225,9 @@
     </div>
   </main>
   
-  <footer>
+  <footer aria-label="Footer">
     <div class="footer__social">
-      <a class="footer__social__link" href="https://www.instagram.com/asthivaara_2k19/" rel="noopener" target="_blank" data-aos="flip-down">
+      <a class="footer__social__link" href="https://www.instagram.com/asthivaara_2k19/" rel="noopener" target="_blank" aria-label="Asthivaara 2K19 Instagram Page" data-aos="flip-down">
         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
 width="50" height="50"
 viewBox="0 0 172 172"
@@ -259,7 +259,7 @@ style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-w
           <dd class="contact__info" data-aos="fade-left" data-aos-delay="100">Venkatesh V<span class="contact__info__tel"><a href="tel:+91 7010 808 144">+91 7010 808 144</a></span></dd>
           <dd class="contact__info" data-aos="fade-left" data-aos-delay="150">Dhamodharen<span class="contact__info__tel"><a href="tel:+91 8667 622 389">+91 8667 622 389</a></span></dd>
           
-          <dt class="contact__position" data-aos="slide-up">Email</dt>
+          <dt class="contact__position">Email</dt>
           <dd class="contact__info"><a href="mailto: asthivaara2019@gmail.com">asthivaara2019@gmail.com</a>
           </dd>
   
