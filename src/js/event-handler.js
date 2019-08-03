@@ -17,8 +17,6 @@ const header = document.querySelector('.header');
 
 window.onload = function() {
   header.style.boxShadow = 'none';
-  document.documentElement.style.overflow = 'auto';
-  document.body.style.overflow = 'auto';
   closeButton.classList.add('vanish');
   eventCards.forEach((eventCard, i) => {
     eventCard.dataset.id = i;
@@ -114,6 +112,7 @@ eventCards.forEach((eventCard, i) => {
       closeButton.classList.remove('vanish');
       closeButton.classList.add('appear');
       document.querySelectorAll('.carousel__button').forEach((button) => {
+        button.removeAttribute('hidden');
         button.classList.remove('vanish');
         button.classList.add('appear');
       })

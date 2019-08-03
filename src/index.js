@@ -5,5 +5,6 @@ import './js/app';
 import './js/countdown';
 import './js/side-nav';
 import './js/registration';
-import './js/map'
-import './images/favicon.ico'
+import './js/map';
+import './images/favicon.ico';
+import './js/wow.min';
