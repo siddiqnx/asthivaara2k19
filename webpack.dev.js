@@ -15,7 +15,7 @@ module.exports = merge(common, {
     rules: [
       //SCSS
       {
-        test:/\.scss$/,
+        test:/\.s?css$/,
         use: [
           MiniCssExtractPlugin.loader,
           {
@@ -53,8 +53,8 @@ module.exports = merge(common, {
     })
   ],
   devServer: {
-    host: '192.168.1.8',
-    port: 9001,
+    host: '192.168.1.5',
+    port: 9000,
     writeToDisk:true
   }
 });

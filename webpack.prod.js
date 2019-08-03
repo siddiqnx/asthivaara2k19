@@ -22,7 +22,7 @@ module.exports = merge(common, {
     rules: [
       //SCSS
       {
-        test:/\.scss$/,
+        test:/\.s?css$/,
         use: [
           MiniCssExtractPlugin.loader,
           {
