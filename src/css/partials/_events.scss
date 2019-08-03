@@ -60,10 +60,6 @@ main {
     align-self: center;
     justify-self: center;
   }
-
-  &:hover {
-    transform: translate3d(0, -10px, 0) scale3d(1.1, 1.05, 1);
-  }
 }
 
 .events--all {

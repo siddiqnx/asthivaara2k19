@@ -11,15 +11,15 @@ var gridLeft;
 const eventCards = document.querySelectorAll('.events:not(.events--all) .event-card');
 const eventsGrids = document.querySelectorAll('.events-grid');
 const eventCardCarousels = document.querySelectorAll('.carousel-wrapper');
-const closeButton = document.querySelector('.close-button img');
+const closeButton = document.querySelector('.close-button');
 const eventSectionHeadings = document.querySelectorAll('.heading');
 const header = document.querySelector('.header');
 
 window.onload = function() {
   header.style.boxShadow = 'none';
-  document.querySelector('.loader-wrapper').style.display = 'none';
   document.documentElement.style.overflow = 'auto';
   document.body.style.overflow = 'auto';
+  closeButton.classList.add('vanish');
   eventCards.forEach((eventCard, i) => {
     eventCard.dataset.id = i;
     cardWidth = cardWidth == 0 ? window.getComputedStyle(eventCard).getPropertyValue('width') : cardWidth;
@@ -38,7 +38,6 @@ window.onload = function() {
     width: ${gridWidth[i]};
     height: ${gridHeight[i]};`;
   });
-  closeButton.classList.add('vanish');
   document.querySelectorAll('.carousel__button').forEach((button) => {
     button.style.display = 'none';
     button.classList.add('vanish');
@@ -111,6 +110,7 @@ eventCards.forEach((eventCard, i) => {
     })
     if(closeButton.classList.contains('vanish')) {
       setTimeout(() => {
+      closeButton.removeAttribute('hidden');
       closeButton.classList.remove('vanish');
       closeButton.classList.add('appear');
       document.querySelectorAll('.carousel__button').forEach((button) => {
@@ -158,6 +158,7 @@ closeButton.addEventListener('click', (e) => {
   eventCardCarousel.classList.add('vanish');
   closeButton.classList.remove('appear');
   closeButton.classList.add('vanish');
+  closeButton.dataset.hidden = 'true';
   document.querySelectorAll('.carousel__button').forEach((button) => {
     button.classList.remove('appear');
     button.classList.add('vanish');
