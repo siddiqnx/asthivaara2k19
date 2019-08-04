@@ -6,3 +6,4 @@ import './js/carousel';
 import './js/event-handler';
 import './js/side-nav';
 import './js/animate-on-scroll';
+import './_headers';

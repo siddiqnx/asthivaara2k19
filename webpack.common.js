@@ -40,6 +40,17 @@ module.exports = {
           }
         ]
       },
+      {
+        test: /_headers/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '_headers'
+            }
+          }
+        ]
+      },
       //Font Loader
       {
         test: /\.(ttf|eot|woff|woff2|otf)$/,

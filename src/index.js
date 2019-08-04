@@ -7,3 +7,4 @@ import './js/side-nav';
 import './js/registration';
 import './js/map';
 import './js/animate-on-scroll';
+import './_headers';

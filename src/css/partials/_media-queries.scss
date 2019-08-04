@@ -193,14 +193,17 @@
   }
   .nav__list {
     margin: 0 50px;
+    text-align: center;
   }
   .nav__list-item {
     display: inline-block;
-    padding: 10px 15px;
     background: lighten($c-dark, 10%);
     border-radius: 15px;
     font-size: $fs-s;
-    margin: 5px 0;
+    margin: 5px 5px;
+  }
+  .nav__list-item a {
+    padding: 10px 20px;
   }
   .footer__contact {
     padding-left: 0px;
