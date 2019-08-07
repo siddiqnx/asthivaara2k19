@@ -42,18 +42,24 @@ module.exports = merge(common, {
       template: "./src/index.html",
       filename: "./index.html",
       chunks: ["index"]
-    }),new HtmlWebpackPlugin({
+    }),
+    new HtmlWebpackPlugin({
       template: "./src/events.html",
       filename: "./events.html",
       chunks: ["events"]
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/juniors.html",
+      filename: "./juniors.html",
+      chunks: ["juniors"]
     }),
     new MiniCssExtractPlugin({
       filename: "[name].css"
     })
   ],
   devServer: {
-    host: '192.168.1.5',
-    port: 9000,
+    host: '192.168.1.6',
+    port: 9001,
     writeToDisk:true
   }
 });

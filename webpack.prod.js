@@ -69,5 +69,15 @@ module.exports = merge(common, {
       },
       chunks: ["events"]
     }),
+    new HtmlWebpackPlugin({
+      template: "./src/juniors.html",
+      filename: "./juniors.html",
+      minify: {
+        removeAttributeQuotes: true,
+        collapseWhitespace: true,
+        removeComments: true
+      },
+      chunks: ["juniors"]
+    }),
   ]
 });

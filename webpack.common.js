@@ -3,7 +3,8 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 module.exports = {
   entry: {
     index: "./src/index.js",
-    events: "./src/events_entry.js"
+    events: "./src/events_entry.js",
+    juniors: "./src/juniors_entry.js"
   },
   module: {
     rules: [

@@ -21,6 +21,7 @@
      gtag('js', new Date());
      gtag('config', 'UA-144968682-1');
    </script>
+   
 </head>
 <body>
 
@@ -148,8 +149,9 @@
       <h2 class="heading register__heading" data-aos="fade-up">Register</h2>
       <div id="register_wrapper">
         <form id="register_form" data-aos="fade-up">
-          <label type="text" for="name" data-aos="fade-right" data-aos-duration="400">
-            <select>
+          <!-- Registration Type -->
+          <label type="text" for="registration-type" data-aos="fade-right" data-aos-duration="400" data-aos-offset="-200">
+            <select id="registration-type">
               <option value="">Select one</option>
               <option value="Symposium">Symposium</option>
               <option value="Workshop">Workshop</option>
@@ -157,46 +159,160 @@
             </select>
             <span class="label">Registration For</span>
           </label>
-          <label type="text" for="name" data-aos="fade-left" data-aos-duration="400">
+
+          <!-- Prefix -->
+          <label type="text" for="prefix" data-aos="fade-right" data-aos-duration="400" data-aos-offset="-200">
+            <select name="user_prefix" id="prefix" placeholder="Select the name prefix" required>
+              <option value=""></option>
+              <option value="Mr">Mr.</option>
+              <option value="Ms">Ms.</option>
+              <option value="Dr">Dr.</option>
+            </select>
+            <span class="label">Prefix</span>
+          </label>
+
+          <!-- Name -->
+          <label type="text" for="name" data-aos="fade-left" data-aos-duration="400" data-aos-offset="-200">
             <input type="text" name="user_name" id="name" placeholder="Enter your name" required aria-label="name">
             <span class="label">Name</span>
           </label>
-          <label type="text" for="email" data-aos="fade-right" data-aos-duration="400">
-            <input type="text" name="user_email" id="email" placeholder="Enter your email ID" required>
-            <span class="label">Email ID</span>
+
+          <!-- Organization/Institution -->
+          <label  class=" " type="text" for="organization" data-aos="fade-left" data-aos-duration="400" data-aos-offset="-200">
+            <input type="text" name="user_organization" id="organization" placeholder="Enter your organization name" required>
+            <span class="label">Organization/Institution</span>
           </label>
-          <label type="text" for="phno" data-aos="fade-left" data-aos-duration="400">
-            <input type="text" name="user_phno" id="phno" placeholder="Enter your phone number" required>
-            <span class="label">Phone Number</span>
+
+          <!-- Grade -->
+          <label  class=" " type="text" for="grade" data-aos="fade-left" data-aos-duration="400" data-aos-offset="-200">
+            <input type="text" name="user_grade" id="grade" placeholder="Enter your grade/standard" required>
+            <span class="label">Standard/Grade</span>
           </label>
-          <label type="text" for="degree" data-aos="fade-right" data-aos-duration="400">
-            <input type="text" name="user_degree" id="degree" required>
-            <span class="label">Degree</span>
-          </label>
-          <label type="text" for="dept" data-aos="fade-left" data-aos-duration="400">
+
+          <!-- Department -->
+          <label type="text" for="dept" data-aos="fade-left" data-aos-duration="400" data-aos-offset="-200">
             <input type="text" name="user_department" id="dept" required>
             <span class="label">Department</span>
           </label>
-          <label type="text" for="year" data-aos="fade-right" data-aos-duration="400">
+
+          <!-- Year -->
+          <label type="text" for="year" data-aos="fade-right" data-aos-duration="400" data-aos-offset="-200">
             <select name="user_year" id="year" placeholder="Select your year of study" required>
               <option value=""></option>
-              <option value="1st Year">1st Year</option>
-              <option value="2nd Year">2nd Year</option>
-              <option value="3rd Year">3rd Year</option>
-              <option value="4th Year">4th Year</option>
-              <option value="5th Year">5th Year</option>
-              <option value="6th Year">Others</option>
+              <option value="1st Year">I Year</option>
+              <option value="2nd Year">II Year</option>
+              <option value="3rd Year">III Year</option>
+              <option value="4th Year">IV Year</option>
             </select>
             <span class="label">Year</span>
           </label>
-          <label  class=" " type="text" for="college" data-aos="fade-left" data-aos-duration="400">
-            <input type="text" name="user_college" id="college" placeholder="Enter your college" required>
-            <span class="label">College</span>
+
+          <!-- Address -->
+          <label type="text" for="address" data-aos="fade-right" data-aos-duration="400" data-aos-offset="-200">
+            <input type="text" name="user_address" id="address" placeholder="Enter your contact address" required>
+            <span class="label">Address</span>
           </label>
-          <button class="register__pay" type="button" value="Register" value="Pay Registration Fee" data-aos="zoom-in-up">
-            Pay Registration Fee
+
+          <!-- Country -->
+          <label type="text" for="country" data-aos="fade-right" data-aos-duration="400" data-aos-offset="-200">
+            <input type="text" name="user_country" id="country" placeholder="Enter your country of residence" required>
+            <span class="label">Country</span>
+          </label>
+
+          <!-- Phone Number -->
+          <label type="text" for="phno" data-aos="fade-left" data-aos-duration="400" data-aos-offset="-200">
+            <input type="text" name="user_phno" id="phno" placeholder="Enter your phone number" maxlength="10" required>
+            <span class="label">Phone Number</span>
+          </label>
+
+          <!-- Email -->
+          <label type="text" for="email" data-aos="fade-right" data-aos-duration="400" data-aos-offset="-200">
+            <input type="text" name="user_email" id="email" placeholder="Enter your email ID" required>
+            <span class="label">Email ID</span>
+          </label>
+
+          <!-- Food Preference -->
+          <p class="p-label">
+          	Food Preference
+          </p>
+          <label type="text" for="food-veg" class="label-dark" data-aos="fade-right" data-aos-duration="400" data-aos-offset="-200">
+            <input type="radio" name="user_food" id="food-veg" value="vegetarian" required>
+            
+            <span class="label">Vegetarian</span>
+          </label>
+          <label type="text" for="food-non-veg" class="label-dark" data-aos="fade-right" data-aos-duration="400" data-aos-offset="-200">
+            <input type="radio" name="user_food" id="food-non-veg" value="non-vegetarian">
+            <span class="label">Non-Vegetarian</span>
+          </label>
+
+          <!-- Accommodation -->
+          <p class="p-label">
+            Accommodation
+          </p>
+          <label type="text" for="accommodation-yes" class="label-dark" data-aos="fade-right" data-aos-duration="400" data-aos-offset="-200">
+            <input type="radio" name="user_accommodation" id="accommodation-yes" value="Yes" required>
+            
+            <span class="label">Yes</span>
+          </label>
+          <label type="text" for="accommodation-no" class="label-dark" data-aos="fade-right" data-aos-duration="400" data-aos-offset="-200">
+            <input type="radio" name="user_accommodation" id="accommodation-no" value="No">
+            <span class="label">No</span>
+          </label>
+
+          <!-- Mode of Payment -->
+          <p class="p-label">
+            Mode of Payment
+          </p>
+          <label type="text" for="payment-netbanking" class="label-dark" data-aos="fade-right" data-aos-duration="400" data-aos-offset="-200">
+            <input type="radio" name="user_paymentmethod" id="payment-netbanking" value="Net banking/IMPS/NEFT" required>
+            
+            <span class="label">Net banking/IMPS/NEFT</span>
+          </label>
+          <label type="text" for="payment-gpay" class="label-dark" data-aos="fade-right" data-aos-duration="400" data-aos-offset="-200">
+            <input type="radio" name="user_paymentmethod" id="payment-gpay" value="Google Pay">
+            <span class="label">Google Pay</span>
+          </label>
+
+          <!-- Payment Details -->
+          <p class="p-label">Payment Details</p>
+
+          <!-- Account Number -->
+          <label type="text" for="accno" data-aos="fade-right" data-aos-duration="400" data-aos-offset="-200">
+            <input type="text" name="user_accno" id="accno" class="small-label" placeholder="Enter your Bank Account Number" required>
+            <span class="label">Account Number</span>
+          </label>
+
+          <!-- Date of Transfer -->
+          <label type="text" for="dateoftransfer" data-aos="fade-right" data-aos-duration="400" data-aos-offset="-200">
+            <input type="text" name="user_dateoftransfer" id="dateoftransfer" class="small-label" placeholder="Enter the date of transfer of money" required>
+            <span class="label">Date of Transfer</span>
+          </label>
+
+          <!-- Amount -->
+          <label type="text" for="paidamount" data-aos="fade-right" data-aos-duration="400" data-aos-offset="-200">
+            <input type="text" name="user_amount" id="paidamount" class="small-label" placeholder="Enter the amount you have paid" required>
+            <span class="label">Amount (Rs.)</span>
+          </label>
+
+          <!-- Reference ID -->
+          <label type="text" for="referenceid" data-aos="fade-right" data-aos-duration="400" data-aos-offset="-200">
+            <input type="text" name="user_referenceid" id="referenceid" class="small-label" placeholder="Enter the Reference ID" required>
+            <span class="label">Reference ID</span>
+          </label>
+
+          <!-- Screenshot -->
+          <label type="text" for="screenshot" class="label-dark" data-aos="fade-right" data-aos-duration="400" data-aos-offset="-200">
+            <span class="s-label">Screenshot of Payment</span> 
+            <input type="file" name="user_screenshot" id="screenshot" files accept="image/*" required>
+            
+          </label>
+          <!-- Pay Button -->
+          <button id="pay-button" class="register__pay" type="button" value="Register" value="Pay Registration Fee" data-aos-offset="-200" data-aos="zoom-in-up">
+            I have paid the Registration Fee
           </button>
-          <button class="register__submit" type="button" value="Register" disabled data-aos="zoom-in-up">
+
+          <!-- Register Button -->
+          <button form="register_form" type="submit" id="register-button" class="register__submit" type="button" value="Register" disabled data-aos-offset="-200" data-aos="zoom-in-up">
             Register
           </button>
         </form>
@@ -366,6 +482,9 @@ style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-w
 
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBk30HWsNQ0seajNRAbtVGsZfZUHn4E7gI&callback=initMap"
   async defer></script>
-
+  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-storage.js"></script>
+  
 </body>
 </html>
