@@ -30,7 +30,7 @@ module.exports = {
       },
       //File Loader
       {
-        test: /\.(png|svg|jpe?g|gif|ico|webp)$/,
+        test: /\.(PNG|png|svg|JPE?G|jpe?g|gif|ico|webp)$/,
         use: [
           {
             loader: 'file-loader',
@@ -41,17 +41,7 @@ module.exports = {
           }
         ]
       },
-      {
-        test: /_headers/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '_headers'
-            }
-          }
-        ]
-      },
+      
       //Font Loader
       {
         test: /\.(ttf|eot|woff|woff2|otf)$/,

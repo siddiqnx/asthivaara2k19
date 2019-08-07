@@ -8,4 +8,3 @@ import './js/side-nav';
 import './js/firebase'
 import './js/registration';
 import './js/map';
-import './_headers';
