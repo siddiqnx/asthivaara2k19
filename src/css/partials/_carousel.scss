@@ -108,6 +108,12 @@ body {
   transform: translate(-50%, -50%) rotate(-45deg);
 }
 
+.carousel-wrapper > img {
+  width: 100vw;
+  object-fit: contain;
+  height: 100%;
+}
+
 .close-button {
   position: fixed;
   cursor: pointer;
