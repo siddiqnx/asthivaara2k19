@@ -7,10 +7,14 @@ const registerButton = document.querySelector('#register-button');
 const storage = firebase.storage();
 const storageRef = storage.ref();
 const imagesRef = storageRef.child('images');
+const openModalButtons = document.querySelectorAll('[data-modal-target]')
+const closeModalButtons = document.querySelectorAll('[data-close-button]')
+const overlay = document.getElementById('overlay');
 
 let registrationType = form.querySelector('#registration-type');
 let type;
 let hasPaid = false;
+
 
 window.addEventListener('DOMContentLoaded', () => {
   registerButton.setAttribute('disabled', '');
@@ -37,33 +41,17 @@ registrationType.addEventListener('change', (e) => {
   //   document.querySelector('#paidamount').value = '';
   // } else 
   if (type == 'Workshop') {
-    showFormElement(form.querySelector('label[for="dept"]'));
-    showFormElement(form.querySelector('label[for="year"]'));
-    hideFormElement(form.querySelector('label[for="grade"]'));
+    registerButton.innerText = "Register for Workshop";
     showFormElement(form.querySelector('label[for="country"]'));
     showFormElement(form.querySelector('label[for="referenceid"]'));
-    hideFormElement(form.querySelector('label[for="payment-netbanking"]'));
-    hideFormElement(form.querySelector('label[for="payment-gpay"]'));
     document.querySelector('#paidamount').value = '350.00';
-    document.querySelector('#register_form .p-label:nth-of-type(3)').style.display = 'none';
   } else if (type == 'Symposium') {
-    showFormElement(form.querySelector('label[for="dept"]'));
-    showFormElement(form.querySelector('label[for="year"]'));
-    hideFormElement(form.querySelector('label[for="grade"]'));
+    registerButton.innerText = "Register for Symposium";
     hideFormElement(form.querySelector('label[for="country"]'));
     hideFormElement(form.querySelector('label[for="referenceid"]'));
-    showFormElement(form.querySelector('label[for="payment-netbanking"]'));
-    showFormElement(form.querySelector('label[for="payment-gpay"]'));
-    document.querySelector('#paidamount').value = '';
-    document.querySelector('#register_form .p-label:nth-of-type(3)').style.display = '';
+    document.querySelector('#paidamount').value = '200.00';
   }
 })
-
-// db.collection('symposium-users').get().then((snapshot) => {
-//   snapshot.docs.forEach(doc => {
-//     console.log(doc.data());
-//   });
-// });
 
 payButton.addEventListener('click', (e) => {
   hasPaid = true;
@@ -84,10 +72,11 @@ form.addEventListener('submit', (e) => {
   e.preventDefault();
   var file = form.user_screenshot.files[0];
   var screenshotRef = imagesRef.child(file.name);
+  let url;
   screenshotRef.put(form.user_screenshot.files[0])
     .then((snapshot) => {return snapshot.ref.getDownloadURL();})
     .then((downloadURL) => {
-      console.log(downloadURL);
+      url = downloadURL;
     if (registrationType.value == 'Workshop') {
       db.collection('workshop-users').add({
         prefix: form.user_prefix.value,
@@ -101,7 +90,6 @@ form.addEventListener('submit', (e) => {
         email: form.user_email.value,
         food: form.user_food.value,
         accommodation: form.user_accommodation.value,
-        paymentMode: form.user_paymentmethod.value,
         paymentDetails: {
           accountNumber: form.user_accno.value,
           dateOfTransfer: form.user_dateoftransfer.value,
@@ -112,11 +100,49 @@ form.addEventListener('submit', (e) => {
         registrationDate: new Date(),
         hasUploadedScreenshot: (form.user_screenshot.files.length) ? true : false,
       }).then((docRef) => {
+        console.log(docRef);
+        var data = {
+          prefix: form.user_prefix.value,
+          name: form.user_name.value,
+          organization: form.user_organization.value,
+          department: form.user_department.value,
+          year: form.user_year.value,
+          address: form.user_address.value,
+          country: form.user_country.value,
+          phoneNumber: form.user_phno.value,
+          email: form.user_email.value,
+          food: form.user_food.value,
+          accommodation: form.user_accommodation.value,
+          paymentDetails: {
+            accountNumber: form.user_accno.value,
+            dateOfTransfer: form.user_dateoftransfer.value,
+            amount: form.user_amount.value,
+            referenceID: form.user_referenceid.value,
+            screenshotURL: url
+          },
+          registrationDate: new Date(),
+          hasUploadedScreenshot: (form.user_screenshot.files.length) ? true : false,
+        };
+
+        fetch('https://api.sendgrid.com/v3/mail/send', {
+          method: 'POST',
+          headers: {
+            'Authorization': 'Bearer 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',
+            'Content-Type': 'application/json',
+          },
+          body: '{"personalizations": [{"to": [{"email": "nxsiddiq@gmail.com"}]}],"from": {"email": "info@asthivaara19.com"},"subject": "Hello, World!","content": [{"type": "text/plain", "value": "Heya!"}]}'
+        }).then((res) => {
+          console.log('sg response');
+          console.log(res);
+        }).catch((err) => {
+          console.log(err);
+        });
         alert(`Registration Successful`);
         form.reset();
         hasPaid = false;
         registerButton.setAttribute('disabled', '');
       }).catch((error) => {
+        console.log(error);
         alert("Registration has failed. Please check the details and try again");
       });
     } else if (registrationType.value == 'Symposium') {
@@ -131,7 +157,6 @@ form.addEventListener('submit', (e) => {
         email: form.user_email.value,
         food: form.user_food.value,
         accommodation: form.user_accommodation.value,
-        paymentMode: form.user_paymentmethod.value,
         paymentDetails: {
           accountNumber: form.user_accno.value,
           dateOfTransfer: form.user_dateoftransfer.value,
@@ -148,25 +173,6 @@ form.addEventListener('submit', (e) => {
       }).catch((error) => {
         alert("Registration has failed. Please check the details and try again");
       });
-    } else if (registrationType.value == 'Asthivaara Junior') {
-      console.log('junior')
-      db.collection('junior-users').add({
-        name: form.user_name.value,
-        email: form.user_email.value,
-        phoneNumber: form.user_phno.value,
-        grade: form.user_grade.value,
-        school: form.user_school.value,
-        registrationDate: new Date(),
-        hasPaid: false
-      }).then((docRef) => {
-        alert(`Registration Successful`);
-        form.reset();
-        hasPaid = false;
-        registerButton.setAttribute('disabled', '');
-      }).catch((error) => {
-        console.log(error);
-        alert("Registration has failed. Please check the details and try again");
-      });
     } else {
       alert('Choose a valid Registration Type!');
     }
@@ -175,3 +181,38 @@ form.addEventListener('submit', (e) => {
   //   alert('File Upload Error. Please try again');
   // });
 });
+
+// Modal Logic
+
+openModalButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const modal = document.querySelector(button.dataset.modalTarget)
+    openModal(modal)
+  })
+})
+
+overlay.addEventListener('click', () => {
+  const modals = document.querySelectorAll('.modal.active')
+  modals.forEach(modal => {
+    closeModal(modal)
+  })
+})
+
+closeModalButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const modal = button.closest('.modal')
+    closeModal(modal)
+  })
+})
+
+function openModal(modal) {
+  if (modal == null) return
+  modal.classList.add('active')
+  overlay.classList.add('active')
+}
+
+function closeModal(modal) {
+  if (modal == null) return
+  modal.classList.remove('active')
+  overlay.classList.remove('active')
+}
