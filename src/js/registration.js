@@ -11,6 +11,9 @@ const openModalButtons = document.querySelectorAll('[data-modal-target]')
 const closeModalButtons = document.querySelectorAll('[data-close-button]')
 const overlay = document.getElementById('overlay');
 
+const sg = require('@sendgrid/mail');
+sg.setApiKey('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');
+
 let registrationType = form.querySelector('#registration-type');
 let type;
 let hasPaid = false;
@@ -123,20 +126,37 @@ form.addEventListener('submit', (e) => {
           registrationDate: new Date(),
           hasUploadedScreenshot: (form.user_screenshot.files.length) ? true : false,
         };
-
-        fetch('https://api.sendgrid.com/v3/mail/send', {
-          method: 'POST',
-          headers: {
-            'Authorization': 'Bearer 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',
-            'Content-Type': 'application/json',
-          },
-          body: '{"personalizations": [{"to": [{"email": "nxsiddiq@gmail.com"}]}],"from": {"email": "info@asthivaara19.com"},"subject": "Hello, World!","content": [{"type": "text/plain", "value": "Heya!"}]}'
-        }).then((res) => {
-          console.log('sg response');
-          console.log(res);
-        }).catch((err) => {
+        try {
+          const msg = {
+            "personalizations": [
+              {
+                "to": [
+                  {
+                    "email": "nxsiddiq@gmail.com",
+                    "name": "John Doe"
+                  }
+                ],
+                "dynamic_template_data": {
+                  "name": form.user_name.value,
+                  
+                },
+                "subject": "Hello, World!"
+              }
+            ],
+            "from": {
+              "email": "info@asthivaara19.com",
+              "name": "Asthivaara 2K19"
+            },
+            "reply_to": {
+              "email": "noreply@johndoe.com",
+              "name": "John Doe"
+            },
+            "template_id": "d-21f98d2715ee4ab5a84443ec166ba9ec"
+          };
+          sg.send(msg);
+        } catch(err) {
           console.log(err);
-        });
+        }
         alert(`Registration Successful`);
         form.reset();
         hasPaid = false;
