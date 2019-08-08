@@ -7,9 +7,6 @@ const registerButton = document.querySelector('#register-button');
 const storage = firebase.storage();
 const storageRef = storage.ref();
 const imagesRef = storageRef.child('images');
-const openModalButtons = document.querySelectorAll('[data-modal-target]')
-const closeModalButtons = document.querySelectorAll('[data-close-button]')
-const overlay = document.getElementById('overlay');
 
 let registrationType = form.querySelector('#registration-type');
 let type;
@@ -18,37 +15,27 @@ let hasPaid = false;
 
 window.addEventListener('DOMContentLoaded', () => {
   registerButton.setAttribute('disabled', '');
-});
-
-function hideFormElement(el) {
-  el.style.display = 'none';
-  el.firstElementChild.removeAttribute('required');
-}
-
-function showFormElement(el) {
-  el.style.display = '';
-  el.firstElementChild.setAttribute('required', 'true');
-}
-
-registrationType.addEventListener('change', (e) => {
   type = registrationType.value;
-  // if(type == 'Asthivaara Junior') {
-  //   hideFormElement(form.querySelector('label[for="dept"]'));
-  //   hideFormElement(form.querySelector('label[for="year"]'));
-  //   showFormElement(form.querySelector('label[for="grade"]'));
-  //   showFormElement(form.querySelector('label[for="payment-netbanking"]'));
-  //   showFormElement(form.querySelector('label[for="payment-gpay"]'));
-  //   document.querySelector('#paidamount').value = '';
-  // } else 
   if (type == 'Workshop') {
     registerButton.innerText = "Register for Workshop";
-    showFormElement(form.querySelector('label[for="country"]'));
-    showFormElement(form.querySelector('label[for="referenceid"]'));
     document.querySelector('#paidamount').value = '350.00';
   } else if (type == 'Symposium') {
     registerButton.innerText = "Register for Symposium";
-    hideFormElement(form.querySelector('label[for="country"]'));
-    hideFormElement(form.querySelector('label[for="referenceid"]'));
+    document.querySelector('#paidamount').value = '200.00';
+  }
+});
+
+registrationType.addEventListener('change', (e) => {
+  type = registrationType.value;
+  document.getElementById('paidamount').focus();
+  document.getElementById('paidamount').addEventListener('click', () => {
+    document.getElementById('paidamount').focus();
+  })
+  if (type == 'Workshop') {
+    registerButton.innerText = "Register for Workshop";
+    document.querySelector('#paidamount').value = '350.00';
+  } else if (type == 'Symposium') {
+    registerButton.innerText = "Register for Symposium";
     document.querySelector('#paidamount').value = '200.00';
   }
 })
@@ -87,7 +74,6 @@ form.addEventListener('submit', (e) => {
         department: form.user_department.value,
         year: form.user_year.value,
         address: form.user_address.value,
-        country: form.user_country.value,
         phoneNumber: form.user_phno.value,
         email: form.user_email.value,
         food: form.user_food.value,
@@ -129,6 +115,7 @@ form.addEventListener('submit', (e) => {
           accountNumber: form.user_accno.value,
           dateOfTransfer: form.user_dateoftransfer.value,
           amount: form.user_amount.value,
+          referenceID: form.user_referenceid.value,
           screenshotURL: downloadURL
         },
         registrationDate: new Date(),
@@ -151,38 +138,3 @@ form.addEventListener('submit', (e) => {
     alert('File Upload Error. Please try again');
   });
 });
-
-// Modal Logic
-
-openModalButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const modal = document.querySelector(button.dataset.modalTarget)
-    openModal(modal)
-  })
-})
-
-overlay.addEventListener('click', () => {
-  const modals = document.querySelectorAll('.modal.active')
-  modals.forEach(modal => {
-    closeModal(modal)
-  })
-})
-
-closeModalButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const modal = button.closest('.modal')
-    closeModal(modal)
-  })
-})
-
-function openModal(modal) {
-  if (modal == null) return
-  modal.classList.add('active')
-  overlay.classList.add('active')
-}
-
-function closeModal(modal) {
-  if (modal == null) return
-  modal.classList.remove('active')
-  overlay.classList.remove('active')
-}

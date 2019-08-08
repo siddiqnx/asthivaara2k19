@@ -129,6 +129,10 @@
   
 }
 
+#paidamount ~ .label{
+  transform: translateY(-20px) translateX(-30px) scale(0.6);
+}
+
 #register_form input[type="text"]:focus ~ .label, #register_form input[type="text"]:valid ~ .label, #register_form select:focus ~ .label, #register_form select:valid ~ .label {
   -webkit-transform: translateY(-40px) translateX(-20px) scale(.8);
           transform: translateY(-40px) translateX(-20px) scale(.8);
@@ -214,37 +218,10 @@
   overflow: auto;
 }
 
-.modal.active {
-  transform: translate(-50%, -50%) scale(1);
-}
-
-.modal-header {
-  padding: 10px 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.modal-header .title {
-  font-size: 1.25rem;
-  font-weight: bold;
-}
-
-.modal-header .close-button {
-  cursor: pointer;
-  border: none;
-  outline: none;
-  background: none;
-  font-size: 1.25rem;
-  font-weight: bold;
-  color: $c-light;
-  background: $c-primary;
-  padding: 20px 10px;
-  line-height: 0;
-}
-
 .modal-body {
   padding: 10px 30px 50px;
+  max-width: 440px;
+  margin: 0 auto;
 }
 
 .modal-table {

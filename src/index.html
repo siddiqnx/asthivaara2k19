@@ -146,8 +146,60 @@
     </div>
 
     <section id="register" class="register">
-      <h2 class="heading register__heading" data-aos="fade-up">Register</h2>
+      <h2 class="heading register__heading" data-aos="fade-up">Registration</h2>
+      
       <div id="register_wrapper">
+          <div class="modal-body">
+              <h3 class="modal-body__heading heading">
+                INSTRUCTIONS FOR PAYMENT
+              </h3>
+              <p>
+                Participant(s) need to pay registration fee through online mode or spot registration (First come First serve basis)
+              </p>
+              <p>
+                Registration fee Rs.200/- per participant (General)
+              </p>
+              <p>
+                Registration fee Rs.350/- per participant (Workshop)
+              </p>
+              <p>
+                Registration fee includes kit and working lunch
+              </p>
+              <h3 class="modal-body__heading heading">
+                PAYMENT DETAILS
+              </h3>
+              NEFT/IMPS/Net Banking/Google Pay Transfer can be made to below account details
+              <table class="modal-table">
+                <tr>
+                  <td>Beneficiary Name</td>
+                  <td>Easwari Engineering College</td>
+                </tr>
+                <tr>
+                  <td>Bank Name</td>
+                  <td>City Union Bank</td>
+                </tr>
+                <tr>
+                  <td>Account Number</td>
+                  <td>1171 090 000 333 61</td>
+                </tr>
+                <tr>
+                  <td>Account Type</td>
+                  <td>Current</td>
+                </tr>
+                <tr>
+                  <td>IFSC Code</td>
+                  <td>CIUB0000517</td>
+                </tr>
+                <tr>
+                  <td>MICR Code</td>
+                  <td>600054102</td>
+                </tr>
+                <tr>
+                  <td>Branch Name</td>
+                  <td>Ramapuram</td>
+                </tr>
+              </table>
+            </div>
         <form id="register_form" data-aos="fade-up">
           <!-- Registration Type -->
           <label type="text" for="registration-type" data-aos="fade-right" data-aos-duration="400" data-aos-offset="-200">
@@ -206,12 +258,6 @@
             <span class="label">Address</span>
           </label>
 
-          <!-- Country -->
-          <label type="text" for="country" data-aos="fade-right" data-aos-duration="400" data-aos-offset="-200">
-            <input type="text" name="user_country" id="country" placeholder="Enter your country of residence" required>
-            <span class="label">Country</span>
-          </label>
-
           <!-- Phone Number -->
           <label type="text" for="phno" data-aos="fade-left" data-aos-duration="400" data-aos-offset="-200">
             <input type="text" name="user_phno" id="phno" placeholder="Enter your phone number" maxlength="10" required>
@@ -253,9 +299,6 @@
           </label>
 
           <!-- Payment Details -->
-          <button type="button" class="register__submit" data-modal-target="#modal">Instructions for payment</button>
-
-          <!-- Payment Details -->
           <p class="p-label">Payment Details</p>
 
           <!-- Account Number -->
@@ -272,7 +315,7 @@
 
           <!-- Amount -->
           <label type="text" for="paidamount" data-aos="fade-right" data-aos-duration="400" data-aos-offset="-200">
-            <input type="text" name="user_amount" id="paidamount" class="small-label" placeholder="Enter the amount you have paid" required>
+            <input type="text" name="user_amount" id="paidamount" class="small-label" readonly placeholder="Enter the amount you have paid" required>
             <span class="label">Amount (Rs.)</span>
           </label>
 
@@ -298,64 +341,7 @@
             Register
           </button>
         </form>
-        
-        <div class="modal" id="modal">
-          <div class="modal-header">
-            <button data-close-button class="close-button">&times;</button>
-          </div>
-          <div class="modal-body">
-            <h3 class="modal-body__heading heading">
-              INSTRUCTIONS FOR PAYMENT
-            </h3>
-            <p>
-              Participant(s) need to pay registration fee through online mode or spot registration (First come First serve basis)
-            </p>
-            <p>
-              Registration fee Rs.200/- per participant (General)
-            </p>
-            <p>
-              Registration fee Rs.350/- per participant (Workshop)
-            </p>
-            <p>
-              Registration fee includes kit and working lunch
-            </p>
-            <h3 class="modal-body__heading heading">
-              PAYMENT DETAILS
-            </h3>
-            NEFT/IMPS/Net Banking/Google Pay Transfer can be made to below account details
-            <table class="modal-table">
-              <tr>
-                <td>Beneficiary Name</td>
-                <td>Easwari Engineering College</td>
-              </tr>
-              <tr>
-                <td>Bank Name</td>
-                <td>City Union Bank</td>
-              </tr>
-              <tr>
-                <td>Account Number</td>
-                <td>1171 090 000 333 61</td>
-              </tr>
-              <tr>
-                <td>Account Type</td>
-                <td>Current</td>
-              </tr>
-              <tr>
-                <td>IFSC Code</td>
-                <td>CIUB0000517</td>
-              </tr>
-              <tr>
-                <td>MICR Code</td>
-                <td>600054102</td>
-              </tr>
-              <tr>
-                <td>Branch Name</td>
-                <td>Ramapuram</td>
-              </tr>
-            </table>
-          </div>
-        </div>
-        <div id="overlay"></div>
+
       </div>
     </section>
 
