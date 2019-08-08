@@ -73,6 +73,8 @@ form.addEventListener('submit', (e) => {
   var file = form.user_screenshot.files[0];
   var screenshotRef = imagesRef.child(file.name);
   let url;
+  registerButton.innerHTML = "Registering...";
+  registerButton.classList.add('spinning');
   screenshotRef.put(form.user_screenshot.files[0])
     .then((snapshot) => {return snapshot.ref.getDownloadURL();})
     .then((downloadURL) => {
@@ -101,9 +103,11 @@ form.addEventListener('submit', (e) => {
         hasUploadedScreenshot: (form.user_screenshot.files.length) ? true : false,
       }).then((docRef) => {
         console.log(docRef);
-        alert(`Registration for Workshop Successful!`);
         form.reset();
         hasPaid = false;
+        registerButton.classList.remove('spinning');
+        registerButton.innerHTML = "Registration Successful!";
+        alert(`Registration for Workshop Successful!`);
         registerButton.setAttribute('disabled', '');
       }).catch((error) => {
         console.log(error);
@@ -130,9 +134,11 @@ form.addEventListener('submit', (e) => {
         registrationDate: new Date(),
         hasUploadedScreenshot: (form.user_screenshot.files.length) ? true : false,
       }).then((docRef) => {
-        alert(`Registration for Symposium Successful!`);
         form.reset();
         hasPaid = false;
+        registerButton.classList.remove('spinning');
+        registerButton.innerHTML = "Registration Successful!";
+        alert(`Registration for Symposium Successful!`);
         registerButton.setAttribute('disabled', '');
       }).catch((error) => {
         alert("Registration has failed. Please check the details and try again");

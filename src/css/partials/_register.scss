@@ -276,6 +276,48 @@
   pointer-events: all;
 }
 
+.register__submit.spinning {
+  padding-right: 40px;
+}
+.register__submit.spinning:after {
+  content: '';
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  width: 0;
+  height: 0;
+  box-shadow: 0px 0px 0 1px $c-light;
+  position: absolute;
+  border-radius: 50%;
+  animation: rotate360 .5s infinite linear, exist .1s forwards ease;
+}
+
+.register__submit.spinning:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+  right: 6px;
+  top: 50%;
+  position: absolute;
+  animation: rotate360 .5s infinite linear, exist .1s forwards ease ;
+}
+
+@keyframes rotate360 { 
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+@keyframes exist { 
+  100% {
+      width: 15px;
+      height: 15px;
+      margin: -8px 5px 0 0;
+  }
+}
+
+
 // #register::after {
 //   content: 'Registration will open soon';
 //   position: absolute;
