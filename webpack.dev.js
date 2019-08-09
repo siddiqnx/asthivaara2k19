@@ -58,7 +58,7 @@ module.exports = merge(common, {
     })
   ],
   devServer: {
-    host: '192.168.1.5',
+    host: '192.168.1.3',
     port: 9001,
     writeToDisk:true
   }
