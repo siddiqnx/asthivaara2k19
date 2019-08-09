@@ -8,25 +8,22 @@ document.onload = function() {
   }
 }
 
-if(!headerLogo.classList.contains('home')) {
-  headerLogo.classList.remove('hide');
-}
-
-if(headerLogo.classList.contains('home')) {
-  window.addEventListener('scroll', () => {
-    isAtTheTop = window.scrollY ? false : true;
-    if(isAtTheTop) {
+var observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    console.log('hhoh')
+    if (headerLogo.classList.contains('home') && !entry.target.getBoundingClientRect().y) {
+      header.style.boxShadow = 'none';
       headerLogo.classList.remove('show');
       headerLogo.classList.add('hide');
-      header.style.boxShadow = 'none';
-    } 
-    else if(!isAtTheTop) {
+    } else if (headerLogo.classList.contains('home')) {
+      headerLogo.classList.remove('hide');
       headerLogo.classList.add('show');
       header.style.boxShadow = 'black 0px 0px 5rem';
     }
   });
-  
-}
+});
+
+observer.observe(document.querySelector('.sentinel'));
 
 internalLinks.forEach((link) => {
   link.addEventListener('click', function(e) {
