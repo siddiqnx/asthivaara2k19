@@ -85,7 +85,7 @@ form.addEventListener('submit', (e) => {
           referenceID: form.user_referenceid.value,
           screenshotURL: downloadURL
         },
-        registrationDate: new Date(),
+        registrationDate: new Date().toString(),
         hasUploadedScreenshot: (form.user_screenshot.files.length) ? true : false,
       }).then((docRef) => {
         console.log(docRef);
