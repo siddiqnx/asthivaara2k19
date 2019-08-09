@@ -118,7 +118,7 @@ form.addEventListener('submit', (e) => {
           referenceID: form.user_referenceid.value,
           screenshotURL: downloadURL
         },
-        registrationDate: new Date(),
+        registrationDate: new Date().toString(),
         hasUploadedScreenshot: (form.user_screenshot.files.length) ? true : false,
       }).then((docRef) => {
         form.reset();
@@ -128,6 +128,7 @@ form.addEventListener('submit', (e) => {
         alert(`Registration for Symposium Successful!`);
         registerButton.setAttribute('disabled', '');
       }).catch((error) => {
+        console.log(error);
         alert("Registration has failed. Please check the details and try again");
       });
     } else {
