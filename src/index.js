@@ -1,9 +1,10 @@
 import './css/main.scss';
 import './fonts/IBMPlexSans-Bold.ttf';
 import './fonts/IBMPlexSans-Light.ttf';
+import './js/animate-on-scroll';
 import './js/app';
 import './js/countdown';
 import './js/side-nav';
+import './js/firebase'
 import './js/registration';
-import './js/map'
-import './images/favicon.ico'
+import './js/map';

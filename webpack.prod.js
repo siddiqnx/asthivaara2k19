@@ -9,7 +9,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = merge(common, {
   mode: "production",
   output: {
-    filename: "main.[contentHash].js",
+    filename: "[name].[contentHash].js",
     path: path.resolve(__dirname, "dist")
   },
   optimization: {
@@ -22,7 +22,7 @@ module.exports = merge(common, {
     rules: [
       //SCSS
       {
-        test:/\.scss$/,
+        test:/\.s?css$/,
         use: [
           MiniCssExtractPlugin.loader,
           {
@@ -68,6 +68,16 @@ module.exports = merge(common, {
         removeComments: true
       },
       chunks: ["events"]
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/juniors.html",
+      filename: "./juniors.html",
+      minify: {
+        removeAttributeQuotes: true,
+        collapseWhitespace: true,
+        removeComments: true
+      },
+      chunks: ["juniors"]
     }),
   ]
 });

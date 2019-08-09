@@ -9,13 +9,12 @@ module.exports = merge(common, {
   output: {
     filename: "[name].js",
     path: path.resolve(__dirname, "dist"),
-    chunkFilename: '[id].bundle.js',
   },
   module: {
     rules: [
       //SCSS
       {
-        test:/\.scss$/,
+        test:/\.s?css$/,
         use: [
           MiniCssExtractPlugin.loader,
           {
@@ -43,17 +42,23 @@ module.exports = merge(common, {
       template: "./src/index.html",
       filename: "./index.html",
       chunks: ["index"]
-    }),new HtmlWebpackPlugin({
+    }),
+    new HtmlWebpackPlugin({
       template: "./src/events.html",
       filename: "./events.html",
       chunks: ["events"]
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/juniors.html",
+      filename: "./juniors.html",
+      chunks: ["juniors"]
     }),
     new MiniCssExtractPlugin({
       filename: "[name].css"
     })
   ],
   devServer: {
-    host: '192.168.1.8',
+    host: '192.168.1.3',
     port: 9001,
     writeToDisk:true
   }

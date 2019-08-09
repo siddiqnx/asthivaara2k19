@@ -3,7 +3,8 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 module.exports = {
   entry: {
     index: "./src/index.js",
-    events: "./src/events_entry.js"
+    events: "./src/events_entry.js",
+    juniors: "./src/juniors_entry.js"
   },
   module: {
     rules: [
@@ -20,13 +21,16 @@ module.exports = {
         test: /\.html$/,
         use: [
           {
-            loader: "html-loader"
+            loader: "html-loader",
+            options: {
+              attrs: ['img:data-lazy', 'img:src']
+            }
           }
         ]
       },
       //File Loader
       {
-        test: /\.(png|svg|jpe?g|gif|ico)$/,
+        test: /\.(PNG|png|svg|JPE?G|jpe?g|gif|ico|webp)$/,
         use: [
           {
             loader: 'file-loader',
@@ -37,6 +41,7 @@ module.exports = {
           }
         ]
       },
+      
       //Font Loader
       {
         test: /\.(ttf|eot|woff|woff2|otf)$/,

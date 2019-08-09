@@ -17,8 +17,6 @@ const header = document.querySelector('.header');
 
 window.onload = function() {
   header.style.boxShadow = 'none';
-  document.documentElement.style.overflow = 'auto';
-  document.body.style.overflow = 'auto';
   closeButton.classList.add('vanish');
   eventCards.forEach((eventCard, i) => {
     eventCard.dataset.id = i;
@@ -59,6 +57,7 @@ eventCards.forEach((eventCard, i) => {
   eventCard.addEventListener('click', (e) => {
     
     const eventCard = e.target.closest('.event-card');
+    const eventCardTitle = eventCard.querySelector('.event-card__title');
     const eventGrid = eventCard.parentNode;
     const eventSection = eventGrid.parentNode;
     const eventCardId = eventCard.dataset.id;
@@ -78,6 +77,8 @@ eventCards.forEach((eventCard, i) => {
     notClearElements.forEach((element) => {
       element.classList.add('clear');
     })
+    eventCardTitle.classList.remove('appear');
+    eventCardTitle.classList.add('vanish');
     eventSection.style.height = eventSectionHeight;
     eventGrid.style.left = eventGrid.offsetLeft + 'px';
     eventGrid.style.top = eventGrid.offsetTop + 'px';
@@ -114,6 +115,7 @@ eventCards.forEach((eventCard, i) => {
       closeButton.classList.remove('vanish');
       closeButton.classList.add('appear');
       document.querySelectorAll('.carousel__button').forEach((button) => {
+        button.removeAttribute('hidden');
         button.classList.remove('vanish');
         button.classList.add('appear');
       })
@@ -125,7 +127,7 @@ eventCards.forEach((eventCard, i) => {
 
 closeButton.addEventListener('click', (e) => {
   const eventCard = document.querySelector('.event-card.expanded');
-  const target = e.target;
+  const eventCardTitle = eventCard.querySelector('.event-card__title');
   const eventGrid = eventCard.parentNode;
   const eventGridId = eventGrid.dataset.id;
   const clearElements = document.querySelectorAll('.clear');
@@ -153,6 +155,8 @@ closeButton.addEventListener('click', (e) => {
   eventSectionHeadings.forEach((heading) => {
     heading.classList.remove('vanish');
   })
+  eventCardTitle.classList.remove('vanish');
+  eventCardTitle.classList.add('appear');
   eventCardCarousel.classList.remove('hide');
   eventCardCarousel.classList.remove('appear');
   eventCardCarousel.classList.add('vanish');
