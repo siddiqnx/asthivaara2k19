@@ -174,6 +174,12 @@
   }
 }
 
+@media only screen and (max-width: 529px) {
+.about__section:nth-child(3) .about__image-container {
+  margin-top: 51px;
+  }
+}
+
 @media only screen and (max-width: 520px) {
   .hero {
     grid-template-columns: 1fr 1fr 160px .5fr 160px 1fr 1fr;
@@ -241,6 +247,9 @@
 @media only screen and (max-width: 447px) {
   .about__image-container {
     top: 200px;
+  }
+  .about__section:nth-child(3) .about__image-container {
+    margin-top: 0;
   }
 }
 

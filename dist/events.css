@@ -595,7 +595,8 @@ a[href^="#"] {
 .about {
   margin: 100px 0; }
   .about__section {
-    display: flex; }
+    display: flex;
+    align-items: center; }
   .about__section + .about__section {
     margin-top: 100px; }
   .about__text {
@@ -1420,6 +1421,10 @@ body {
   .gallery__illustration {
     width: 75vw; } }
 
+@media only screen and (max-width: 529px) {
+  .about__section:nth-child(3) .about__image-container {
+    margin-top: 51px; } }
+
 @media only screen and (max-width: 520px) {
   .hero {
     grid-template-columns: 1fr 1fr 160px .5fr 160px 1fr 1fr; }
@@ -1465,7 +1470,9 @@ body {
 
 @media only screen and (max-width: 447px) {
   .about__image-container {
-    top: 200px; } }
+    top: 200px; }
+  .about__section:nth-child(3) .about__image-container {
+    margin-top: 0; } }
 
 @media only screen and (max-width: 399px) {
   #register_form {
