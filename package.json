@@ -41,6 +41,7 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
+    "@glidejs/glide": "^3.3.0",
     "aos": "^2.3.4"
   }
 }

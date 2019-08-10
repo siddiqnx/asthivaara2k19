@@ -38,7 +38,7 @@ function getScrollbarWidth() {
 }
 
 function renderModal(e) {
-  if (e.target.closest('.event-card')) {
+  if (e.target.closest('.events:not(.events--all) .event-card')) {
     if(!e.target.closest('.event-card').classList.contains('expanded')) {
       const card = e.target.closest('.event-card');
       cardStyle = window.getComputedStyle(card);
