@@ -993,19 +993,6 @@ main {
 .events--online .event-card {
   border-bottom: 5px solid #b6f492; }
 
-.expanded {
-  position: absolute;
-  width: 100vw;
-  height: 100vh !important;
-  cursor: auto;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  margin: 0;
-  z-index: 999;
-  transition: width 1s, height 1s, left 1s, top 1s; }
-
 body {
   margin: 0;
   padding: 0; }
@@ -1112,9 +1099,8 @@ body {
   cursor: pointer;
   top: 40px;
   right: 20px;
-  z-index: 9999; }
-  .close-button img {
-    width: 50px; }
+  z-index: 9999;
+  width: 50px; }
 
 .footer__social {
   width: 100%;

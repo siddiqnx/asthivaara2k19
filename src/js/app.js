@@ -1,14 +1,9 @@
 const header = document.querySelector('.header');
 const headerLogo = document.querySelector('.header__logo');
 const internalLinks = document.querySelectorAll('a[href^="#"]');
-let isAtTheTop = true;
-document.onload = function() {
-
-}
 
 var observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
-    console.log('hhoh')
     if (headerLogo.classList.contains('home') && !entry.target.getBoundingClientRect().y) {
       header.style.boxShadow = 'none';
       headerLogo.classList.remove('show');

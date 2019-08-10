@@ -1,0 +1,142 @@
+[
+  {
+    "name": "MegaMind",
+    "url": [
+      "./images/technical/megamind-1.jpg",
+      "./images/technical/megamind-2.jpg"
+    ]
+  },
+  {
+    "name": "Paper Presentation",
+    "url": [
+      "./images/technical/paper-presentation-1.jpg",
+      "./images/technical/paper-presentation-2.jpg"
+    ]
+  },
+  {
+    "name": "Poster Presentation",
+    "url": [
+      "./images/technical/poster-presentation-1.jpg",
+      "./images/technical/poster-presentation-2.jpg"
+    ]
+  },
+  {
+    "name": "CADDSter",
+    "url": [
+      ""
+    ]
+  },
+  {
+    "name": "Bridge IT",
+    "url": [
+      "./images/technical/bridge-it-1.jpg",
+      "./images/technical/bridge-it-2.jpg"
+    ]
+  },
+  {
+    "name": "Technical Hunt",
+    "url": [
+      "./images/technical/technical-hunt-1.jpg",
+      "./images/technical/technical-hunt-2.jpg"
+    ]
+  },
+  {
+    "name": "Code Accelerator",
+    "url": [
+      "./images/technical/code-accelerator-1.jpg",
+      "./images/technical/code-accelerator-2.jpg"
+    ]
+  },
+  {
+    "name": "Flair Chair",
+    "url": [
+      "./images/technical/flair-chair.jpg"
+    ]
+  },
+  {
+    "name": "Design Challenge",
+    "url": [
+      "./images/technical/master-builder.jpg"
+    ]
+  },
+  {
+    "name": "Hit Wicket",
+    "url": [
+      "./images/non-technical/hit-wicket-1.jpg",
+      "./images/non-technical/hit-wicket-2.jpg",
+      "./images/non-technical/hit-wicket-3.jpg"
+    ]
+  },
+  {
+    "name": "CR10",
+    "url": [
+      ""
+    ]
+  },
+  {
+    "name": "PUBG",
+    "url": [
+      ""
+    ]
+  },
+  {
+    "name": "Fitness Challenge",
+    "url": [
+      ""
+    ]
+  },
+  {
+    "name": "Connexions",
+    "url": [
+      "./images/non-technical/connexions.jpg"
+    ]
+  },
+  {
+    "name": "Fandom Buzz",
+    "url": [
+      "./images/technical/fandom-buzz.PNG"
+    ]
+  },
+  {
+    "name": "Fit For Fat",
+    "url": [
+      ""
+    ]
+  },
+  {
+    "name": "Magic Spin",
+    "url": [
+      "./images/technical/magic-spin.jpg"
+    ]
+  },
+  {
+    "name": "Brick Challenge",
+    "url": [
+      "./images/technical/brick-challenge.jpg"
+    ]
+  },
+  {
+    "name": "Short Film",
+    "url": [
+      "./images/technical/lights-camera-action.jpg"
+    ]
+  },
+  {
+    "name": "First Look",
+    "url": [
+      ""
+    ]
+  },
+  {
+    "name": "Meme Creation",
+    "url": [
+      "./images/technical/meme-fiesta.jpg"
+    ]
+  },
+  {
+    "name": "Tik Tok",
+    "url": [
+      ""
+    ]
+  }
+]

@@ -384,12 +384,17 @@ style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-w
     </div>
     <div class="footer__copyright-info">Copyright © | Easwari Engineering College</div>
   </footer>
-  <span class="close-button" hidden>
-    <img src="images/close-button.png" data-lazy="images/close-button.png" alt="close the popup">
+  <span >
+    <img hidden class="close-button" src="images/close-button.png" data-lazy="images/close-button.png" alt="close the popup">
   </span>
   <template id="card-template">
+    <style>
+      .event-card {
+        transition: width 1s, height 1s;
+      }
+    </style>
     <div class="event-card">
-      <h3 class="event-card__title">Poster Presentation</h3>
+      <h3 class="event-card__title"></h3>
       <div class="carousel">
         
       </div>
