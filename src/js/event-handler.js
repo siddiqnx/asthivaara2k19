@@ -123,7 +123,7 @@ function renderModal(e) {
       setTimeout(() => {
         modalTitle.setAttribute('hidden', '');
         renderCarousel(modal, card.dataset.cardId);
-      }, 500);
+      }, 550);
     }
   }
 }
