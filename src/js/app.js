@@ -10,7 +10,6 @@ document.onload = function() {
 
 var observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
-    console.log('hhoh')
     if (headerLogo.classList.contains('home') && !entry.target.getBoundingClientRect().y) {
       header.style.boxShadow = 'none';
       headerLogo.classList.remove('show');
