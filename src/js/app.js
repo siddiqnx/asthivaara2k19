@@ -1,3 +1,5 @@
+import 'intersection-observer';
+
 const header = document.querySelector('.header');
 const headerLogo = document.querySelector('.header__logo');
 const internalLinks = document.querySelectorAll('a[href^="#"]');

@@ -111,3 +111,53 @@ main {
 .events--online .event-card {
   border-bottom: 5px solid rgb(182, 244, 146);
 }
+
+.close-button {
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  width: 50px;
+  z-index: 99999;
+  cursor: pointer;
+}
+
+.glide {
+  transition: transform .3s ease-out, opacity .3s;
+}
+
+.glide__slide img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.glide__track {
+  width: 100%;
+  margin-top: 50vh;
+  transform: translateY(-50%);
+}
+
+.carousel-controls {
+  z-index: 99999;
+  position: fixed;
+  .glide__arrow {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+}
+
+.glide__arrow--left {
+  position: fixed;
+  left: 10px;
+  top: 50vh;
+  transform: translateY(-50%);
+}
+
+.glide__arrow--right {
+  position: fixed;
+  right: 10px;
+  top: 50vh;
+  transform: translateY(-50%);
+}

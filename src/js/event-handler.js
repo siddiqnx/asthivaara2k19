@@ -1,8 +1,10 @@
 const closeButton = document.querySelector('.close-button');
 const header = document.querySelector('.header');
 const cardTemplate = document.querySelector('#card-template');
+const carouselTemplate = document.querySelector('#carousel-template');
 const wrapper = document.querySelector('.wrapper');
 import * as data from '../events.json'
+import Glide from '@glidejs/glide';
 
 var cardLayout;
 var modalWidth;
@@ -37,6 +39,21 @@ function getScrollbarWidth() {
   return scrollbarWidth;
 }
 
+function renderCarousel(modal, n) {
+  const carouselNode = document.importNode(carouselTemplate.content, true);
+  const carousel = carouselNode.querySelector('.glide');
+  console.log(carousel);
+  modal.appendChild(carousel);
+  var glide = new Glide('.glide', {
+    focusAt: 'center',
+    type: 'carousel'
+  });
+  
+  console.log(glide);
+  
+  glide.mount();
+}
+
 function renderModal(e) {
   if (e.target.closest('.events:not(.events--all) .event-card')) {
     if(!e.target.closest('.event-card').classList.contains('expanded')) {
@@ -53,6 +70,7 @@ function renderModal(e) {
       wrapper.style.cssText = `
         width: calc(100vw - ${getScrollbarWidth()}px);
       `;
+      closeButton.removeAttribute('hidden');
       scrollYPos = document.documentElement.scrollTop;
       header.style.transform = `translateY(${scrollYPos}px)`
       document.body.style.top = `-${document.documentElement.scrollTop}px`;
@@ -64,11 +82,10 @@ function renderModal(e) {
         left: ${cardLayout.x}px;
         z-index: 9999;
         border-bottom: ${cardStyle.borderBottomWidth} ${cardStyle.borderBottomStyle} ${cardStyle.borderBottomColor};
-        transition: all .4s;
+        transition: all .4s ease-in;
       `;
 
       modalTitle.innerText = cardTitle.innerText;
-      console.log(window.getComputedStyle(cardTitle).backgroundImage);
       modalTitle.style.cssText = `
         color: transparent;
         background-image: ${window.getComputedStyle(cardTitle).backgroundImage};
@@ -76,11 +93,9 @@ function renderModal(e) {
         background-clip: text;
         opacity: 1;
       `;
-      console.log(window.getComputedStyle(modalTitle).backgroundImage)
       document.body.insertBefore(modal, document.body.children[1]);
       modal.classList.add('expanded');
       setTimeout(() => {
-        const closeButton = document.querySelector('.close-button');
         modal.style.cssText = `
           position: fixed;
           top: 0px;
@@ -90,16 +105,20 @@ function renderModal(e) {
           z-index: 9999;
           width: calc(100vw - ${getScrollbarWidth()}px);
           height: 100vh;
+          user-select: none;
           border-bottom: ${cardStyle.borderBottomWidth} ${cardStyle.borderBottomStyle} ${cardStyle.borderBottomColor};
-          transition: all .4s;
+          transition: all .4s ease-in;
         `;
         modalTitle.style.cssText = `
           opacity: 0;
           transition: opacity .4s;
         `;
-        closeButton.removeAttribute('hidden');
+        
       }, 0)
-
+      setTimeout(() => {
+        modalTitle.setAttribute('hidden', '');
+        renderCarousel(modal, card.dataset.cardId);
+      }, 500);
     }
   }
 }
@@ -121,7 +140,7 @@ closeButton.addEventListener('click', (e) => {
     width: 100vw;
     height: 100vh;
     border-bottom: ${cardStyle.borderBottomWidth} ${cardStyle.borderBottomStyle} ${cardStyle.borderBottomColor};
-    transition: all .4s;
+    transition: all .4s ease-out;
   `;
   setTimeout(() => {
     openModal.style.cssText = `
@@ -134,7 +153,12 @@ closeButton.addEventListener('click', (e) => {
       width: ${modalWidth};
       height: ${modalHeight};
       border-bottom: ${cardStyle.borderBottomWidth} ${cardStyle.borderBottomStyle} ${cardStyle.borderBottomColor};
-      transition: all .4s;
+      transition: all .4s ease-out;
+    `;
+
+    document.querySelector('.glide').style.cssText = `
+      transform: scale(.2);
+      opacity: 0;
     `;
   }, 0);
   document.body.style.position = 'static';
