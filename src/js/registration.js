@@ -88,10 +88,6 @@ form.addEventListener('submit', (e) => {
         registrationDate: new Date().toString(),
         hasUploadedScreenshot: (form.user_screenshot.files.length) ? true : false,
       }).then((docRef) => {
-<<<<<<< HEAD
-=======
-        console.log(docRef);
->>>>>>> master
         form.reset();
         hasPaid = false;
         registerButton.classList.remove('spinning');

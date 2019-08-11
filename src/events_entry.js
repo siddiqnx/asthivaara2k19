@@ -6,7 +6,6 @@ import './js/app';
 import './js/glider';
 import './js/event-handler';
 import './js/side-nav';
-<<<<<<< HEAD
 import './js/animate-on-scroll';
 import './images/events/technical/bridge-it-1.jpg';
 import './images/events/technical/bridge-it-2.jpg';
@@ -33,6 +32,3 @@ import './images/events/non-technical/lights-camera-action.jpg';
 import './images/events/non-technical/magic-spin.jpg';
 import './images/events/online/meme-fiesta.jpg';
 
-=======
-import './js/animate-on-scroll';
->>>>>>> master
