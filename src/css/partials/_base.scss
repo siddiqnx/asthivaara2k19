@@ -94,3 +94,38 @@ section > .heading {
 a[href^="#"] {
   scroll-behavior: smooth;
 }
+
+.flash-news {
+  position: absolute;
+  top: 55px;
+  height: 30px;
+  overflow: hidden;
+  margin: 0px auto;
+  width: 100%;
+  max-width: 600px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.flash-news__p {
+  line-height: 30px;
+  margin: 0;
+  animation: marquee 20s linear infinite;
+  animation-delay: 2s;
+  white-space: nowrap;
+  color: $c-secondary;
+  transform: translateX(100%);
+  span {
+    color: $c-primary;
+    font-weight: 700;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-400%);
+  }
+}

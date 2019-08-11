@@ -58,7 +58,11 @@ module.exports = merge(common, {
     })
   ],
   devServer: {
+<<<<<<< HEAD
     host: '192.168.1.2',
+=======
+    host: '192.168.1.5',
+>>>>>>> master
     port: 9001,
     writeToDisk:true
   }

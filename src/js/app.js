@@ -3,6 +3,15 @@ import 'intersection-observer';
 const header = document.querySelector('.header');
 const headerLogo = document.querySelector('.header__logo');
 const internalLinks = document.querySelectorAll('a[href^="#"]');
+<<<<<<< HEAD
+=======
+let isAtTheTop = true;
+document.onload = function() {
+  if(headerLogo.classList.contains('home')) {
+    isAtTheTop = window.scrollY ? false : true; 
+  }
+}
+>>>>>>> master
 
 var observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
@@ -19,7 +28,10 @@ var observer = new IntersectionObserver((entries) => {
 });
 
 observer.observe(document.querySelector('.sentinel'));
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 
 internalLinks.forEach((link) => {
   link.addEventListener('click', function(e) {
@@ -34,6 +46,10 @@ const targets = document.querySelectorAll('img');
 
 const lazyLoad = target => {
   const io = new IntersectionObserver((entries, observer) => {
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const img = entry.target;

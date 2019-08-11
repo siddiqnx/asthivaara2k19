@@ -175,8 +175,13 @@
 }
 
 @media only screen and (max-width: 529px) {
+<<<<<<< HEAD
   .about__section:nth-child(3) .about__image-container {
     margin-top: 51px;
+=======
+.about__section:nth-child(3) .about__image-container {
+  margin-top: 51px;
+>>>>>>> master
   }
 }
 
@@ -247,6 +252,15 @@
 @media only screen and (max-width: 447px) {
   .about__image-container {
     top: 200px;
+  }
+  .about__section:nth-child(3) .about__image-container {
+    margin-top: 0;
+  }
+}
+
+@media only screen and (max-width: 399px) {
+  #register_form {
+    padding: 100px 20px;
   }
 }
 
