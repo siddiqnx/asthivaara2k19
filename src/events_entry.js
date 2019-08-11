@@ -1,6 +1,7 @@
 import './css/main.scss';
 import './fonts/IBMPlexSans-Bold.ttf';
 import './fonts/IBMPlexSans-Light.ttf';
+import './js/intersection-observer-polyfill';
 import './js/app';
 import './js/carousel';
 import './js/event-handler';
