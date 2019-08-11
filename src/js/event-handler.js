@@ -3,7 +3,7 @@ const header = document.querySelector('.header');
 const cardTemplate = document.querySelector('#card-template');
 const carouselTemplate = document.querySelector('#carousel-template');
 const wrapper = document.querySelector('.wrapper');
-import * as data from '../events.json'
+import data from '../events.json'
 import Glide from '@glidejs/glide';
 
 var cardLayout;
@@ -42,14 +42,19 @@ function getScrollbarWidth() {
 function renderCarousel(modal, n) {
   const carouselNode = document.importNode(carouselTemplate.content, true);
   const carousel = carouselNode.querySelector('.glide');
-  console.log(carousel);
   modal.appendChild(carousel);
+  console.log(n); 
+  const modalImages = data[n-1].url;
+  const imageEl = document.createElement('img');
+  modalImages.forEach((image, i) => {
+    imageEl.src = `${image}`
+    carousel.querySelectorAll('.glide__slide')[i].appendChild(imageEl.cloneNode(true));
+  })
+  console.log(carousel.querySelectorAll('.glide__slide img'))
   var glide = new Glide('.glide', {
     focusAt: 'center',
     type: 'carousel'
   });
-  
-  console.log(glide);
   
   glide.mount();
 }
@@ -82,7 +87,7 @@ function renderModal(e) {
         left: ${cardLayout.x}px;
         z-index: 9999;
         border-bottom: ${cardStyle.borderBottomWidth} ${cardStyle.borderBottomStyle} ${cardStyle.borderBottomColor};
-        transition: all .4s ease-in;
+        transition: all .4s linear;
       `;
 
       modalTitle.innerText = cardTitle.innerText;
@@ -107,7 +112,7 @@ function renderModal(e) {
           height: 100vh;
           user-select: none;
           border-bottom: ${cardStyle.borderBottomWidth} ${cardStyle.borderBottomStyle} ${cardStyle.borderBottomColor};
-          transition: all .4s ease-in;
+          transition: all .4s linear;
         `;
         modalTitle.style.cssText = `
           opacity: 0;
@@ -140,7 +145,7 @@ closeButton.addEventListener('click', (e) => {
     width: 100vw;
     height: 100vh;
     border-bottom: ${cardStyle.borderBottomWidth} ${cardStyle.borderBottomStyle} ${cardStyle.borderBottomColor};
-    transition: all .4s ease-out;
+    transition: all .4s linear;
   `;
   setTimeout(() => {
     openModal.style.cssText = `
@@ -153,7 +158,7 @@ closeButton.addEventListener('click', (e) => {
       width: ${modalWidth};
       height: ${modalHeight};
       border-bottom: ${cardStyle.borderBottomWidth} ${cardStyle.borderBottomStyle} ${cardStyle.borderBottomColor};
-      transition: all .4s ease-out;
+      transition: all .4s linear;
     `;
 
     document.querySelector('.glide').style.cssText = `
