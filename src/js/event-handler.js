@@ -52,6 +52,7 @@ function renderCarousel(modal, n) {
   })
   console.log(carousel.querySelectorAll('.glide__slide img'))
   var glide = new Glide('.glide', {
+    perTouch: 1,
     focusAt: 'center',
     type: 'carousel'
   });

@@ -55,86 +55,86 @@ payButton.addEventListener('click', (e) => {
 //   return retVal;
 // }
 
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  var file = form.user_screenshot.files[0];
-  var screenshotRef = imagesRef.child(file.name);
-  let url;
-  registerButton.innerHTML = "Registering...";
-  registerButton.classList.add('spinning');
-  screenshotRef.put(form.user_screenshot.files[0])
-    .then((snapshot) => {return snapshot.ref.getDownloadURL();})
-    .then((downloadURL) => {
-      url = downloadURL;
-    if (registrationType.value == 'Workshop') {
-      db.collection('workshop-users').add({
-        prefix: form.user_prefix.value,
-        name: form.user_name.value,
-        organization: form.user_organization.value,
-        department: form.user_department.value,
-        year: form.user_year.value,
-        address: form.user_address.value,
-        phoneNumber: form.user_phno.value,
-        email: form.user_email.value,
-        food: form.user_food.value,
-        accommodation: form.user_accommodation.value,
-        paymentDetails: {
-          accountNumber: form.user_accno.value,
-          dateOfTransfer: form.user_dateoftransfer.value,
-          amount: form.user_amount.value,
-          referenceID: form.user_referenceid.value,
-          screenshotURL: downloadURL
-        },
-        registrationDate: new Date().toString(),
-        hasUploadedScreenshot: (form.user_screenshot.files.length) ? true : false,
-      }).then((docRef) => {
-        form.reset();
-        hasPaid = false;
-        registerButton.classList.remove('spinning');
-        registerButton.innerHTML = "Registration Successful!";
-        alert(`Registration for Workshop Successful!`);
-        registerButton.setAttribute('disabled', '');
-      }).catch((error) => {
-        console.log(error);
-        alert("Registration has failed. Please check the details and try again");
-      });
-    } else if (registrationType.value == 'Symposium') {
-      db.collection('symposium-users').add({
-        prefix: form.user_prefix.value,
-        name: form.user_name.value,
-        organization: form.user_organization.value,
-        department: form.user_department.value,
-        year: form.user_year.value,
-        address: form.user_address.value,
-        phoneNumber: form.user_phno.value,
-        email: form.user_email.value,
-        food: form.user_food.value,
-        accommodation: form.user_accommodation.value,
-        paymentDetails: {
-          accountNumber: form.user_accno.value,
-          dateOfTransfer: form.user_dateoftransfer.value,
-          amount: form.user_amount.value,
-          referenceID: form.user_referenceid.value,
-          screenshotURL: downloadURL
-        },
-        registrationDate: new Date().toString(),
-        hasUploadedScreenshot: (form.user_screenshot.files.length) ? true : false,
-      }).then((docRef) => {
-        form.reset();
-        hasPaid = false;
-        registerButton.classList.remove('spinning');
-        registerButton.innerHTML = "Registration Successful!";
-        alert(`Registration for Symposium Successful!`);
-        registerButton.setAttribute('disabled', '');
-      }).catch((error) => {
-        console.log(error);
-        alert("Registration has failed. Please check the details and try again");
-      });
-    } else {
-      alert('Choose a valid Registration Type!');
-    }
-  })
-  .catch((error) => {
-    alert('File Upload Error. Please try again');
-  });
-});
+// form.addEventListener('submit', (e) => {
+//   e.preventDefault();
+//   var file = form.user_screenshot.files[0];
+//   var screenshotRef = imagesRef.child(file.name);
+//   let url;
+//   registerButton.innerHTML = "Registration Over";
+//   registerButton.classList.add('spinning');
+//   screenshotRef.put(form.user_screenshot.files[0])
+//     .then((snapshot) => {return snapshot.ref.getDownloadURL();})
+//     .then((downloadURL) => {
+//       url = downloadURL;
+//     if (registrationType.value == 'Workshop') {
+//       db.collection('workshop-users').add({
+//         prefix: form.user_prefix.value,
+//         name: form.user_name.value,
+//         organization: form.user_organization.value,
+//         department: form.user_department.value,
+//         year: form.user_year.value,
+//         address: form.user_address.value,
+//         phoneNumber: form.user_phno.value,
+//         email: form.user_email.value,
+//         food: form.user_food.value,
+//         accommodation: form.user_accommodation.value,
+//         paymentDetails: {
+//           accountNumber: form.user_accno.value,
+//           dateOfTransfer: form.user_dateoftransfer.value,
+//           amount: form.user_amount.value,
+//           referenceID: form.user_referenceid.value,
+//           screenshotURL: downloadURL
+//         },
+//         registrationDate: new Date().toString(),
+//         hasUploadedScreenshot: (form.user_screenshot.files.length) ? true : false,
+//       }).then((docRef) => {
+//         form.reset();
+//         hasPaid = false;
+//         registerButton.classList.remove('spinning');
+//         registerButton.innerHTML = "Registration Successful!";
+//         alert(`Registration for Workshop Successful!`);
+//         registerButton.setAttribute('disabled', '');
+//       }).catch((error) => {
+//         console.log(error);
+//         alert("Registration has failed. Please check the details and try again");
+//       });
+//     } else if (registrationType.value == 'Symposium') {
+//       db.collection('symposium-users').add({
+//         prefix: form.user_prefix.value,
+//         name: form.user_name.value,
+//         organization: form.user_organization.value,
+//         department: form.user_department.value,
+//         year: form.user_year.value,
+//         address: form.user_address.value,
+//         phoneNumber: form.user_phno.value,
+//         email: form.user_email.value,
+//         food: form.user_food.value,
+//         accommodation: form.user_accommodation.value,
+//         paymentDetails: {
+//           accountNumber: form.user_accno.value,
+//           dateOfTransfer: form.user_dateoftransfer.value,
+//           amount: form.user_amount.value,
+//           referenceID: form.user_referenceid.value,
+//           screenshotURL: downloadURL
+//         },
+//         registrationDate: new Date().toString(),
+//         hasUploadedScreenshot: (form.user_screenshot.files.length) ? true : false,
+//       }).then((docRef) => {
+//         form.reset();
+//         hasPaid = false;
+//         registerButton.classList.remove('spinning');
+//         registerButton.innerHTML = "Registration Successful!";
+//         alert(`Registration for Symposium Successful!`);
+//         registerButton.setAttribute('disabled', '');
+//       }).catch((error) => {
+//         console.log(error);
+//         alert("Registration has failed. Please check the details and try again");
+//       });
+//     } else {
+//       alert('Choose a valid Registration Type!');
+//     }
+//   })
+//   .catch((error) => {
+//     alert('File Upload Error. Please try again');
+//   });
+// });
